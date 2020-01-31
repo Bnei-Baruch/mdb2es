@@ -15,6 +15,7 @@ import (
 	"os"
 	"path"
 	"path/filepath"
+	"reflect"
 	"sort"
 	"strconv"
 	"strings"
@@ -785,7 +786,7 @@ func EvalScrapeStreaming(in chan EvalQuery, out chan EvalResult, serverUrl strin
 			out <- evalResult
 			sent++
 			log.Debugf("Done sent %d read %d (%s).", sent, read, serverUrl)
-		}(q, read)
+		}(q, read-1)
 	}
 
 	doneWG.Wait()
@@ -1028,13 +1029,13 @@ func WriteVsGoldenHTML(vsGoldenHtml string, records [][]string, goldenRecords []
 				</tr>`,
 				goodStyle, tdStyle, quality,
 				goodStyle, tdStyle,
-				100*counters[1]/totalCounters[1],                                                                           // Weighted percentage.
+				100*counters[1]/totalCounters[1], // Weighted percentage.
 				diffToHtml(100*counters[1]/totalCounters[1]-100*counters[3]/totalCounters[3], false /*round*/, true /*%*/), // Weighted percentage diff.
 				tdStyle,
-				100*counters[0]/totalCounters[0],                                                                           // Unique Percentage.
+				100*counters[0]/totalCounters[0], // Unique Percentage.
 				diffToHtml(100*counters[0]/totalCounters[0]-100*counters[2]/totalCounters[2], false /*round*/, true /*%*/), // Unique percentage diff.
 				tdStyle,
-				(int)(counters[0]),                                               // Unique.
+				(int)(counters[0]), // Unique.
 				diffToHtml(counters[0]-counters[2], true /*round*/, false /*%*/), // Unique diff.
 			))
 		}
@@ -1495,29 +1496,60 @@ func EvalResultDiff(evalQuery EvalQuery, expResult EvalResult, baseResult EvalRe
 	return ret, nil
 }
 
-func EvalResultDiffHtml(resultDiff ResultDiff) (string, error) {
+func structValuesToHtmlString(s interface{}, b int) string {
+	v := reflect.ValueOf(s)
+	valueNames := []string{}
+	for i := 0; i < v.NumField(); i++ {
+		valueNames = append(valueNames, fmt.Sprintf("<td style='border-bottom-width:%dpx'> %s</td>", b, v.Field(i).Interface()))
+	}
+	return strings.Join(valueNames, "")
+}
+
+func structFieldNamesToHtmlString(s interface{}) string {
+	v := reflect.ValueOf(s)
+	typeOfS := v.Type()
+	fields := []string{}
+	for i := 0; i < v.NumField(); i++ {
+		fields = append(fields, fmt.Sprintf("<th> %s</th>", typeOfS.Field(i).Name))
+	}
+	return strings.Join(fields, "")
+}
+
+func EvalResultDiffHtml(resultDiff ResultDiff, clientUrl, clientBaseUrl string) (string, error) {
 	if len(resultDiff.HitsDiffs) == 0 && resultDiff.ErrorStr == "" {
 		return "", nil
 	}
-	parts := []string{fmt.Sprintf("[%s]", resultDiff.Query)}
+	baseLink := ""
+	expLink := ""
+	if clientUrl != "" {
+		baseLink = fmt.Sprintf("<a href='%s/search?q=%s'>base</a>", clientUrl, resultDiff.Query)
+	}
+	if clientBaseUrl != "" {
+		expLink = fmt.Sprintf("<a href='%s/search?q=%s'>experimental</a>", clientBaseUrl, resultDiff.Query)
+	}
+
+	parts := []string{fmt.Sprintf("<h2>%s ( Search on: %s %s )</h2>", resultDiff.Query, baseLink, expLink)}
+	parts = append(parts, "<table style='border-collapse: collapse; width: 100%' border='1'>")
+	parts = append(parts, fmt.Sprintf("<tr><th>Rank</th> %s</tr>", structFieldNamesToHtmlString(resultDiff.HitsDiffs[0].ExpHitSource)))
 	for i := range resultDiff.HitsDiffs {
 		parts = append(parts, fmt.Sprintf(
-			"\t%d: %s <> %s",
+			"<tr><td style='border-bottom: 0'>%d</td> %s</tr><tr><td style='border-top: 0'></td> %s</tr>",
 			resultDiff.HitsDiffs[i].Rank,
-			resultDiff.HitsDiffs[i].ExpHitSource,
-			resultDiff.HitsDiffs[i].BaseHitSource,
+			structValuesToHtmlString(resultDiff.HitsDiffs[i].ExpHitSource, 1),
+			structValuesToHtmlString(resultDiff.HitsDiffs[i].BaseHitSource, 2),
 		))
 	}
+	parts = append(parts, "</table>")
 	if resultDiff.ErrorStr != "" {
 		parts = append(parts, resultDiff.ErrorStr)
 	}
 	return strings.Join(parts, "\n"), nil
 }
 
-func EvalResultsDiffsHtml(resultsDiffs ResultsDiffs) (string, error) {
+func EvalResultsDiffsHtml(resultsDiffs ResultsDiffs, clientUrl, clientBaseUrl string) (string, error) {
 	html := []string{}
 	for i := range resultsDiffs.ResultsDiffs {
-		if part, err := EvalResultDiffHtml(resultsDiffs.ResultsDiffs[i]); err != nil {
+		if part, err := EvalResultDiffHtml(resultsDiffs.ResultsDiffs[i], clientUrl, clientBaseUrl); err != nil {
 			return "", err
 		} else {
 			html = append(html, part)

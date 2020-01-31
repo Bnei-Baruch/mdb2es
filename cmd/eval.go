@@ -45,6 +45,8 @@ var testTypoSuggestCmd = &cobra.Command{
 var evalSetPath string
 var serverUrl string
 var baseServerUrl string
+var clientUrl string
+var clientBaseUrl string
 var reportPath string
 var flatReportPath string
 var flatReportsPaths string
@@ -79,6 +81,8 @@ func init() {
 	evalDiffCmd.PersistentFlags().StringVar(&baseServerUrl, "base_server", "", "URL of base archive backend to evaluate.")
 	evalDiffCmd.MarkFlagRequired("base_server")
 	evalDiffCmd.PersistentFlags().IntVar(&top, "top", 0, "Limit query set size.")
+	evalDiffCmd.PersistentFlags().StringVar(&clientUrl, "client", "", "URL of experimental archive client to evaluate.")
+	evalDiffCmd.PersistentFlags().StringVar(&clientBaseUrl, "client_base", "", "URL of base archive client to evaluate.")
 	RootCmd.AddCommand(evalDiffCmd)
 
 	vsGoldenHtmlCmd.PersistentFlags().StringVar(&flatReportsPaths, "flat_reports", "", "Paths to csv report file per expectation, separated by comma.")
@@ -203,7 +207,7 @@ func evalDiffFn(cmd *cobra.Command, args []string) {
 	diffs, err := search.EvalQuerySetDiff(evalSet, baseServerUrl, serverUrl, -1 /*diffsLimit*/)
 	utils.Must(err)
 	// Generate eval diff html report.
-	html, err := search.EvalResultsDiffsHtml(diffs)
+	html, err := search.EvalResultsDiffsHtml(diffs, clientUrl, clientBaseUrl)
 	utils.Must(err)
 	utils.Must(ioutil.WriteFile(evalDiffHtml, []byte(html), 0644))
 }
