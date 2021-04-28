@@ -112,8 +112,8 @@ func indexGrammarsFn(cmd *cobra.Command, args []string) {
 		return
 	}
 
-	t := time.Now()
-	date := strings.ToLower(t.Format(time.RFC3339))
+	date := getDateAlias()
+
 	if indexDate != "" {
 		date = indexDate
 	}
@@ -126,9 +126,9 @@ func indexGrammarsFn(cmd *cobra.Command, args []string) {
 		log.Info(fmt.Sprintf("New index date is the same as previous index date %s. Wait a minute and rerun.", prev))
 		return
 	}
-    if prev != "" {
-        prev = search.GrammarIndexName("%s", prev)
-    }
+	if prev != "" {
+		prev = search.GrammarIndexName("%s", prev)
+	}
 
 	log.Infof("Client loaded.")
 	variables, err := search.MakeVariablesV2(viper.GetString("elasticsearch.variables"))
@@ -158,8 +158,8 @@ func indexFn(cmd *cobra.Command, args []string) {
 	clock := common.Init()
 	defer common.Shutdown()
 
-	t := time.Now()
-	date := strings.ToLower(t.Format(time.RFC3339))
+	date := getDateAlias()
+
 	if indexDate != "" {
 		date = indexDate
 	}
@@ -176,7 +176,7 @@ func indexFn(cmd *cobra.Command, args []string) {
 		return
 	}
 
-    // Check that we did not set specifi index, otherwise we will always have "same date".
+	// Check that we did not set specifi index, otherwise we will always have "same date".
 	indexDate := viper.GetString("elasticsearch.index-date")
 	if indexDate == "" && date == prevDate {
 		log.Info(fmt.Sprintf("New index date is the same as previous index date %s. Wait a minute and rerun.", prevDate))
@@ -407,4 +407,10 @@ func simulateUpdateFn(cmd *cobra.Command, args []string) {
 
 	log.Info("Success")
 	log.Infof("Total run time: %s", time.Now().Sub(clock).String())
+}
+
+func getDateAlias() string {
+	t := time.Now()
+	date := strings.ToLower(t.Format(time.RFC3339))
+	return strings.ReplaceAll(date, "+", "p")
 }

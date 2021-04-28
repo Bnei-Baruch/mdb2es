@@ -373,7 +373,7 @@ var FILTERS = map[string]string{
 	FILTER_SOURCE:                    "source",
 	FILTER_AUTHOR:                    "source",
 	FILTER_UNITS_CONTENT_TYPES:       "content_type",
-	FILTER_COLLECTIONS_CONTENT_TYPES: "collection_content_type",
+	FILTER_COLLECTIONS_CONTENT_TYPES: "collections_content_type",
 	FILTER_SECTION_SOURCES:           "filter_section_sources",
 	FILTER_LANGUAGE:                  "media_language",
 }
@@ -392,6 +392,7 @@ const ES_RESULT_TYPE_TWEETS = "tweets"
 
 // Result of many tweets in one hit
 const SEARCH_RESULT_TWEETS_MANY = "tweets_many"
+const SEARCH_RESULT_LESSONS_SERIES = "lessons_series"
 
 // Typed UIDs and Filter
 const ES_UID_TYPE_CONTENT_UNIT = "content_unit"

@@ -197,6 +197,21 @@ func contentUnitsTypedUIDs(collectionsContentUnits mdbmodels.CollectionsContentU
 	return ret
 }
 
+func collectionSource(c *mdbmodels.Collection) string {
+	if !c.Properties.Valid {
+		return ""
+	}
+	var props map[string]interface{}
+	err := json.Unmarshal(c.Properties.JSON, &props)
+	if err != nil {
+		return ""
+	}
+	if s, ok := props[consts.ES_UID_TYPE_SOURCE]; ok {
+		return s.(string)
+	}
+	return ""
+}
+
 func (index *CollectionsIndex) indexCollection(c *mdbmodels.Collection) *IndexErrors {
 	indexErrors := MakeIndexErrors()
 	// Calculate effective date by choosing the last data of any of it's content units.
@@ -223,6 +238,7 @@ func (index *CollectionsIndex) indexCollection(c *mdbmodels.Collection) *IndexEr
 			}
 		}
 	}
+	source := collectionSource(c)
 	// Create documents in each language with available translation
 	i18nMap := make(map[string]Result)
 	for _, i18n := range c.R.CollectionI18ns {
@@ -230,6 +246,15 @@ func (index *CollectionsIndex) indexCollection(c *mdbmodels.Collection) *IndexEr
 			indexErrors.ShouldIndex(i18n.Language)
 			typedUIDs := append([]string{KeyValue(consts.ES_UID_TYPE_COLLECTION, c.UID)},
 				contentUnitsTypedUIDs(c.R.CollectionsContentUnits)...)
+			typedUIDs = append([]string{
+				KeyValue(consts.ES_UID_TYPE_COLLECTION, c.UID),
+			},
+				contentUnitsTypedUIDs(c.R.CollectionsContentUnits)...)
+
+			if source != "" {
+				typedUIDs = append(typedUIDs, KeyValue("source", source))
+			}
+
 			filterValues := append(
 				[]string{KeyValue("collections_content_type", mdb.CONTENT_TYPE_REGISTRY.ByID[c.TypeID].Name)},
 				KeyValues("content_type", contentUnitsContentTypes(c.R.CollectionsContentUnits))...,

@@ -6,6 +6,7 @@ import (
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
+	"github.com/Bnei-Baruch/archive-backend/es"
 	"io"
 	"io/ioutil"
 	"math"
@@ -1045,13 +1046,13 @@ func WriteVsGoldenHTML(vsGoldenHtml string, records [][]string, goldenRecords []
 				</tr>`,
 				goodStyle, tdStyle, quality,
 				goodStyle, tdStyle,
-				100*counters[1]/totalCounters[1],                                                                           // Weighted percentage.
+				100*counters[1]/totalCounters[1], // Weighted percentage.
 				diffToHtml(100*counters[1]/totalCounters[1]-100*counters[3]/totalCounters[3], false /*round*/, true /*%*/), // Weighted percentage diff.
 				tdStyle,
-				100*counters[0]/totalCounters[0],                                                                           // Unique Percentage.
+				100*counters[0]/totalCounters[0], // Unique Percentage.
 				diffToHtml(100*counters[0]/totalCounters[0]-100*counters[2]/totalCounters[2], false /*round*/, true /*%*/), // Unique percentage diff.
 				tdStyle,
-				(int)(counters[0]),                                               // Unique.
+				(int)(counters[0]), // Unique.
 				diffToHtml(counters[0]-counters[2], true /*round*/, false /*%*/), // Unique diff.
 			))
 		}
@@ -1471,6 +1472,17 @@ func evalResultToHitSources(result EvalResult) ([]HitSource, error) {
 					}
 					hitSource.CarrouselHitSources = append(hitSource.CarrouselHitSources, carrouselHitSource)
 				}
+			} else if hit.Type == consts.SEARCH_RESULT_LESSONS_SERIES {
+				hitSource.Score = *hit.Score
+				hitSource.ContentType = hit.Type
+				hitSource.ResultType = hit.Type
+				hitSource.MdbUid = hit.Uid
+
+				var res es.Result
+				if err := json.Unmarshal(*hit.Source, &res); err == nil {
+					hitSource.Title = res.Title
+				}
+
 			} else {
 				if hit.Score != nil {
 					hitSource.Score = *hit.Score

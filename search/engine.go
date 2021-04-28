@@ -636,6 +636,22 @@ func (e *ESEngine) DoSearch(ctx context.Context, query Query, sortBy string, fro
 
 	filterIntents := <-grammarsFilterIntentsChannel
 
+	seriesLangChannel := make(chan map[string]*elastic.SearchResult)
+	go func() {
+		defer func() {
+			if err := recover(); err != nil {
+				log.Errorf("ESEngine.DoSearch - Panic searching lesson series: %+v", err)
+				seriesLangChannel <- map[string]*elastic.SearchResult{}
+			}
+		}()
+		if byLang, err := e.LessonsSeries(query, preference); err != nil {
+			log.Errorf("ESEngine.DoSearch - Error searching lesson series: %+v", err)
+			seriesLangChannel <- map[string]*elastic.SearchResult{}
+		} else {
+			seriesLangChannel <- byLang
+		}
+	}()
+
 	if checkTypo {
 		go func() {
 			defer func() {
@@ -771,6 +787,14 @@ func (e *ESEngine) DoSearch(ctx context.Context, query Query, sortBy string, fro
 			resultsByLang[lang] = make([]*elastic.SearchResult, 0)
 		}
 		resultsByLang[lang] = append(resultsByLang[lang], tweets)
+	}
+
+	seriesByLang := <-seriesLangChannel
+	for lang, s := range seriesByLang {
+		if _, ok := resultsByLang[lang]; !ok {
+			resultsByLang[lang] = make([]*elastic.SearchResult, 0)
+		}
+		resultsByLang[lang] = append(resultsByLang[lang], s)
 	}
 
 	filteredByLang := <-grammarsFilteredResultsByLangChannel
@@ -922,6 +946,7 @@ func (e *ESEngine) DoSearch(ctx context.Context, query Query, sortBy string, fro
 			}
 
 			term := query.Term
+
 			for _, lang := range highlightsLangs {
 				if filtered, ok := filteredByLang[lang]; ok {
 					if _, hasId := filtered.HitIdsMap[h.Id]; hasId {

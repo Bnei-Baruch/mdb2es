@@ -206,6 +206,20 @@ func createSpanNearQuery(field string, term string, boost float32, slop int, inO
 	return query, nil
 }
 
+func addMustNotSeries(q Query) *elastic.BoolQuery {
+	if filters, ok := q.Filters[consts.FILTERS[consts.FILTER_COLLECTIONS_CONTENT_TYPES]]; ok {
+		for _, f := range filters {
+			if f == consts.CT_LESSONS_SERIES {
+				return nil
+			}
+		}
+	}
+	//remove from results lesson series collections
+	fCollections := elastic.NewTermsQuery(consts.ES_RESULT_TYPE, consts.ES_RESULT_TYPE_COLLECTIONS)
+	fSeries := elastic.NewTermsQuery("filter_values", fmt.Sprintf("%s:%s", consts.FILTERS[consts.FILTER_COLLECTIONS_CONTENT_TYPES], consts.CT_LESSONS_SERIES))
+	return elastic.NewBoolQuery().Filter(fCollections, fSeries)
+}
+
 // Creates a result query for elastic.
 // resultTypes - list of search result types: sources, topics, CU's, etc..
 // docIds - optional list of _uid's for filtering the search. If the parameter value is nil, no filtering is applied. Used for highlight search.
@@ -230,6 +244,11 @@ func createResultsQuery(resultTypes []string, q Query, docIds []string, filterOu
 			boolQuery.MustNot(innerBoolQuery)
 		}
 	}
+
+	if mustNot := addMustNotSeries(q); mustNot != nil {
+		boolQuery.MustNot(mustNot)
+	}
+
 	//  We append description for intent sources search because the description is commonly used as subtitle
 	appendDecription := !titlesOnly || (len(resultTypes) == 1 && resultTypes[0] == consts.ES_RESULT_TYPE_SOURCES)
 	if q.Term != "" {
@@ -485,8 +504,10 @@ func createResultsQuery(resultTypes []string, q Query, docIds []string, filterOu
 			boolQuery.Filter(contentTypeQuery)
 		}
 	}
+
 	var query elastic.Query
 	query = boolQuery
+
 	if q.Term == "" && len(q.ExactTerms) == 0 {
 		// No potential score from string matching.
 		query = elastic.NewConstantScoreQuery(boolQuery).Boost(1.0)
@@ -505,6 +526,7 @@ func createResultsQuery(resultTypes []string, q Query, docIds []string, filterOu
 		}
 		scoreQuery.Add(elastic.NewTermsQuery("result_type", resultType), elastic.NewWeightFactorFunction(weight))
 	}
+
 	// Reduce score for clips.
 	scoreQuery.Add(elastic.NewTermsQuery("filter_values", es.KeyValue("content_type", consts.CT_CLIP)), elastic.NewWeightFactorFunction(0.7))
 	return elastic.NewFunctionScoreQuery().Query(scoreQuery.Query(query).MinScore(MIN_SCORE_FOR_RESULTS)).ScoreMode("sum").MaxBoost(100.0).
@@ -522,6 +544,9 @@ func NewResultsSearchRequest(options SearchRequestOptions) (*elastic.SearchReque
 	//	This is a generic imp. that supports searching tweets together with other results.
 	//	Currently we are not searching for tweets together with other results but in parallel.
 	for _, rt := range options.resultTypes {
+		if rt == consts.ES_RESULT_TYPE_COLLECTIONS {
+			fetchSourceContext.Include("typed_uids")
+		}
 		if options.includeTypedUidsFromContentUnits && rt == consts.ES_RESULT_TYPE_UNITS && !typedUidsAdded {
 			fetchSourceContext.Include("typed_uids")
 			typedUidsAdded = true
