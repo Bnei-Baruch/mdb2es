@@ -133,16 +133,7 @@ https://www.python.org/downloads/
         ```Shell
         C:\Users\[USER]\go\src\github.com\Bnei-Baruch\archive-backend>python C:\Users\[USER]\go\src\github.com\Bnei-Baruch\archive-backend\es\mappings\make.py
         ```
-    2. From the root path of the project, type:
-        ```Shell
-        go-bindata -debug data/...
-        ```
-    3. Edit bindata.go file (located in the root folder) and replace "package main" with "package bindata".
-    4. Move the modified bindata.go file to /bindata folder (delete old bindata.go from /bindata if exist and make sure the bindata.go is not exist any more in the root folder).
-    5. Repeat this steps any time make.py is changed and executed.
-## Install go-bindata
-
-go get -u github.com/jteeuwen/go-bindata/...
+    2. Repeat any time make.py is changed and executed.
 
 ## License
 

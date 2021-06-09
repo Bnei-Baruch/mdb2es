@@ -22,13 +22,11 @@ url-template="postgres://localhost/%s?sslmode=disable&user=postgres"
 
 [elasticsearch]
 url="http://127.0.0.1:9200"
-grammars="/tmp/grammars/"
-variables="/tmp/variables/"
+data-folder="/tmp/search-data"  # At repo, see: ./data
 sources-folder="/tmp/sources-folder"
 unzip-url=""
 prepare-docs-batch-size=20
 prepare-docs-parallelism=2
-synonyms-folder="/tmp/synonyms-folder"  # At repo, see: ./es/synonyms
 #index-date = "2018-11-28t13:08:31-05:00" # optional, NOT FOR PRODUCTION, comment out to use alias.
 #grammar-index-date = "2018-11-28t13:08:31-05:00" # optional, NOT FOR PRODUCTION, comment out to use alias.
 check-typo=true

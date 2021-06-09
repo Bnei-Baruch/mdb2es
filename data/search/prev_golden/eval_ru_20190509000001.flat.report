@@ -1,0 +1,172 @@
+Language,Query,Weight,Bucket,Comment,Expectation,Parsed,SearchQuality,Rank
+ru,шамати нет никого кроме него,268.00,Shamati,,https://kabbalahmedia.info/ru/sources/hFeGidcS,et_sources|hFeGidcS|,Good,3
+ru,шамати нет никого кроме него,268.00,Shamati,,https://kabbalahmedia.info/ru/lessons?source=bs_qMUUn22b_hFeGidcS,et_lessons||source - bs_qMUUn22b_hFeGidcS,Good,2
+ru,шамати 1,268.00,Shamati,,https://kabbalahmedia.info/ru/sources/hFeGidcS,et_sources|hFeGidcS|,Unknown,-1
+ru,шамати 1,268.00,Shamati,,https://kabbalahmedia.info/ru/lessons?source=bs_qMUUn22b_hFeGidcS,et_lessons||source - bs_qMUUn22b_hFeGidcS,Unknown,-1
+ru,шамати 30,268.00,Shamati,,https://kabbalahmedia.info/ru/sources/IKjYS3I4,et_sources|IKjYS3I4|,Unknown,-1
+ru,шамати 30,268.00,Shamati,,https://kabbalahmedia.info/ru/lessons?source=bs_qMUUn22b_IKjYS3I4,et_lessons||source - bs_qMUUn22b_IKjYS3I4,Unknown,-1
+ru,Тайны вечной книги Ноах,257.00,The secrets of the eternal book,,https://kabbalahmedia.info/ru/programs?program=educational_rF9s8T2V&dates=2009-04-08_2009-06-24,et_programs||program - educational_rF9s8T2V:dates - 2009-04-08_2009-06-24,Unknown,-1
+ru,Тайны вечной книги Ноах,257.00,The secrets of the eternal book,,http://www.kabbalah.info/rus/content/view/frame/63327?/rus/content/view/full/63327&main,et_bad_structure||,Unknown,-1
+ru,"ТВ передача ""Тайны вечной книги""",257.00,The secrets of the eternal book,,https://kabbalahmedia.info/ru/programs?program=educational_rF9s8T2V,et_programs||program - educational_rF9s8T2V,Unknown,-1
+ru,"ТВ передача ""Тайны вечной книги""",257.00,The secrets of the eternal book,,http://www.kabbalah.info/rus/content/view/frame/63327?/rus/content/view/full/63327&main,et_bad_structure||,Unknown,-1
+ru,тайна Вечной книги,257.00,The secrets of the eternal book,,https://kabbalahmedia.info/ru/programs?program=educational_rF9s8T2V,et_programs||program - educational_rF9s8T2V,Unknown,-1
+ru,тайна Вечной книги,257.00,The secrets of the eternal book,,http://www.kabbalah.info/rus/content/view/frame/63327?/rus/content/view/full/63327&main,et_bad_structure||,Unknown,-1
+ru,группа,6.50,Group,,http://www.kabbalah.info/rus/content/view/full/93030,et_bad_structure||,Unknown,-1
+ru,группа,6.50,Group,,https://kabbalahmedia.info/ru/lessons?topic=0db5BBS3_Gvm4nh0t_fWs59UdO,et_lessons||topic - 0db5BBS3_Gvm4nh0t_fWs59UdO,Unknown,-1
+ru,нет никого кроме него,213.00,Topic in Kabbalah,,https://kabbalahmedia.info/ru/sources/hFeGidcS,et_sources|hFeGidcS|,Regular,4
+ru,нет никого кроме него,213.00,Topic in Kabbalah,,https://kabbalahmedia.info/ru/lessons?source=bs_qMUUn22b_hFeGidcS,et_lessons||source - bs_qMUUn22b_hFeGidcS,Good,1
+ru,восприятие реальности,142.00,Topic in Kabbalah,,http://www.kabbalah.info/rus/content/view/frame/103476?/rus/content/view/full/103476&main,et_bad_structure||,Unknown,-1
+ru,восприятие реальности,142.00,Topic in Kabbalah,,https://kabbalahmedia.info/ru/lessons/cu/dcUblC2R?language=ru,et_content_units|dcUblC2R|,Unknown,-1
+ru,восприятие реальности,142.00,Topic in Kabbalah,,https://kabbalahmedia.info/ru/search?q=%D0%BD%D0%B0%20%D1%82%D0%B5%D0%BC%D1%83%20%22%D0%92%D0%BE%D1%81%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B5%20%D1%80%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8%22&sort_by=newertoolder,et_bad_structure||,Unknown,-1
+ru,поручительство,85.20,Topic in Kabbalah,,https://kabbalahmedia.info/ru/sources/itcVAcFn,et_sources|itcVAcFn|,Regular,5
+ru,поручительство,85.20,Topic in Kabbalah,,https://kabbalahmedia.info/ru/sources/6zlJ4KJH,et_sources|6zlJ4KJH|,Regular,7
+ru,поручительство,85.20,Topic in Kabbalah,,https://kabbalahmedia.info/ru/sources/IILb9nI3,et_sources|IILb9nI3|,Unknown,-1
+ru,поручительство,85.20,Topic in Kabbalah,,https://kabbalahmedia.info/ru/programs/c/YSySmqYD,et_collections|YSySmqYD|,Good,2
+ru,поручительство,85.20,Topic in Kabbalah,,https://kabbalahmedia.info/ru/lessons?topic=0db5BBS3_Gvm4nh0t_wJqY3829,et_lessons||topic - 0db5BBS3_Gvm4nh0t_wJqY3829,Regular,6
+ru,женский урок,67.00,Women,,https://kabbalahmedia.info/ru/lessons/women,et_landing_page|women|,Unknown,-1
+ru,женщина,33.50,Women,,http://www.kabbalah.info/rus/content/view/full/47528,et_bad_structure||,Unknown,-1
+ru,женщина,33.50,Women,,https://kabbalahmedia.info/ru/lessons/women,et_landing_page|women|,Unknown,-1
+ru,урок для женщин,67.00,Women,,https://kabbalahmedia.info/ru/lessons/women,et_landing_page|women|,Unknown,-1
+ru,песах,28.77,Holidays,,http://www.kabbalah.info/rus/content/view/full/69659,et_bad_structure||,Unknown,-1
+ru,песах,28.77,Holidays,,https://kabbalahmedia.info/ru/lessons/virtual/c/sg3UeSpN,et_collections|sg3UeSpN|,Unknown,-1
+ru,песах,28.77,Holidays,,https://kabbalahmedia.info/ru/search?q=%D0%BF%D0%B5%D1%81%D0%B0%D1%85,et_bad_structure||,Unknown,-1
+ru,суккот,43.15,Holidays,,http://www.kabbalah.info/rus/content/view/full/69662,et_bad_structure||,Unknown,-1
+ru,суккот,43.15,Holidays,,https://kabbalahmedia.info/ru/search?q=%20%D0%A1%D1%83%D0%BA%D0%BA%D0%BE%D1%82,et_bad_structure||,Unknown,-1
+ru,пурим,43.15,Holidays,,http://www.kabbalah.info/rus/content/view/full/69658,et_bad_structure||,Unknown,-1
+ru,пурим,43.15,Holidays,,https://kabbalahmedia.info/ru/search?q=%D0%9F%D1%83%D1%80%D0%B8%D0%BC,et_bad_structure||,Unknown,-1
+ru,свива това,50.70,Navigational,,http://kabbalahgroup.info/internet/ru/users/login,et_bad_structure||,Unknown,-1
+ru,блог,50.70,Navigational,,https://www.laitman.ru/,et_bad_structure||,Unknown,-1
+ru,каб тв,50.70,Navigational,,http://kab.tv/rus,et_bad_structure||,Unknown,-1
+ru,экран,85.35,Kabbalah concept,,https://www.laitman.ru/duhovnaya-rabota/5526.html,et_bad_structure||,Unknown,-1
+ru,экран,85.35,Kabbalah concept,,https://kabbalahmedia.info/ru/lessons/daily?topic=0db5BBS3_SWTHcWg3_9ACenxnl,et_landing_page|daily|,Unknown,-1
+ru,сфирот,85.35,Kabbalah concept,,https://www.laitman.ru/questions-answers/202636.html,et_bad_structure||,Unknown,-1
+ru,сфирот,85.35,Kabbalah concept,,https://kabbalahmedia.info/ru/lessons/daily?topic=0db5BBS3_SWTHcWg3_wp5i9nTh,et_landing_page|daily|,Unknown,-1
+ru,Тора,85.35,Kabbalah concept,,https://kabbalahmedia.info/ru/programs?source=mr_bvA8ZB1w,et_programs||source - mr_bvA8ZB1w,Good,3
+ru,Тора,85.35,Kabbalah concept,,https://www.laitman.ru/search-results?cx=009476949152162131478%3Ae8s1qvvqlo0&cof=FORID%3A11&ie=UTF-8&q=%D1%82%D0%BE%D1%80%D0%B0&submit.x=9&submit.y=12,et_bad_structure||,Unknown,-1
+ru,музыка Бааль Сулама,115.00,Music,תאור קיים רק בעברית,https://kabbalahmedia.info/ru/search?q=%22%D7%A0%D7%99%D7%92%D7%95%D7%A0%D7%99%20%D7%94%D7%A2%D7%95%D7%9C%D7%9D%20%D7%94%D7%91%D7%90%22,et_bad_structure||,Unknown,-1
+ru,духин,115.00,Music,,https://kabbalahmedia.info/ru/search?q=%22%D7%93%D7%95%D7%9B%D7%99%D7%9F%22,et_bad_structure||,Unknown,-1
+ru,пламя в пустыне,57.50,Music,,https://kabbalahmedia.info/ru/search?q=%22%D0%9F%D0%BB%D0%B0%D0%BC%D1%8F%20%D0%B2%20%D0%BF%D1%83%D1%81%D1%82%D1%8B%D0%BD%D0%B5%22,et_bad_structure||,Unknown,-1
+ru,пламя в пустыне,57.50,Music,,https://www.youtube.com/watch?v=rhWJGYeC37U&t=20s,et_bad_structure||,Unknown,-1
+ru,уроки рабаша,9.00,Rabash recordings,,https://kabbalahmedia.info/ru/lessons/rabash,et_landing_page|rabash|,Unknown,-1
+ru,Зоар ла АМ,155.65,Zohar,,https://kabbalahmedia.info/ru/sources/yUcfylRm,et_sources|yUcfylRm|,Unknown,-1
+ru,Зоар ла АМ,155.65,Zohar,,http://zoar-sulam-rus.org/,et_bad_structure||,Unknown,-1
+ru,предисловие к книге зоар,311.30,Zohar,,https://kabbalahmedia.info/ru/sources/ALlyoveA,et_sources|ALlyoveA|,Good,3
+ru,вечерний урок,311.30,Zohar,"הבקשה לאתר שיעורי ערב. לפי ""שיעור מס' 2"" היה כביכול ניתן לקבל את זה, אך חיפוש לא מציג את השיעורים",לא ניתן כרגע בארכיון החדש,et_bad_structure||,Unknown,-1
+ru,виртуальный урок,57.00,General Kabbalah Lesson,,https://kabbalahmedia.info/ru/lessons/virtual/c/VwCQ0OBq,et_collections|VwCQ0OBq|,Unknown,-1
+ru,особый урок,57.00,General Kabbalah Lesson,,https://kabbalahmedia.info/ru/events,et_landing_page|events|,Unknown,-1
+ru,урок на русском,57.00,General Kabbalah Lesson,בקשה לאתר שיעורים לפי שפת מקור רוסית - לא ניתן לעשות זאת,לא ניתן כרגע בארכיון החדש,et_bad_structure||,Unknown,-1
+ru,утренний урок,15.35,Morning Lesson,,[Latest]https://kabbalahmedia.info/ru/lessons,et_content_units|NqXlcgay|,Unknown,-1
+ru,утренний урок,15.35,Morning Lesson,,https://kabbalahmedia.info/ru/lessons,et_landing_page|lessons|,Unknown,-1
+ru,шаббат,30.70,Morning Lesson," לדעתי מחפשים שיעורי שבת - טוב אם היה אפשר להציג כל שיעורי שבת לפי תאריכי שבת.",לא ניתן כרגע למצוא שיעורים לפי יום בשבוע,et_bad_structure||,Unknown,-1
+ru,птиха 2003,30.70,Morning Lesson,לדעתי מחפשים קורס שרבנתן וירטואלית בשפה רוסית בשנת 2003. לא מצאתי אפשרות לחפש לפי שפת מקור של שיעורים,https://kabbalahmedia.info/ru/lessons/daily?source=bs_L2jMWyce_kB3eD83I&dates=2003-01-01_2003-12-31,et_landing_page|daily|,Unknown,-1
+ru,берешит,75.50,old testament,,https://kabbalahmedia.info/ru/sources/NslF3LJh,et_sources|NslF3LJh|,Unknown,-1
+ru,берешит,75.50,old testament,,https://kabbalahmedia.info/ru/sources/mmnCkYgm,et_sources|mmnCkYgm|,Good,2
+ru,глава тазриа,75.50,old testament,,https://kabbalahmedia.info/ru/sources/YT80k4ZD,et_sources|YT80k4ZD|,Unknown,-1
+ru,глава тазриа,75.50,old testament,,https://kabbalahmedia.info/ru/sources/gZamJsCQ,et_sources|gZamJsCQ|,Unknown,-1
+ru,ноах,75.50,old testament,,https://kabbalahmedia.info/ru/sources/m1phh1m8,et_sources|m1phh1m8|,Regular,5
+ru,ноах,75.50,old testament,,https://kabbalahmedia.info/ru/sources/EtjFb5Ws,et_sources|EtjFb5Ws|,Good,3
+ru,ТЭС,121.50,Talmud Eser Sphirot,,https://kabbalahmedia.info/ru/sources/9xNFLSSp,et_sources|9xNFLSSp|,Unknown,-1
+ru,ТЭС,121.50,Talmud Eser Sphirot,,https://kabbalahmedia.info/he/lessons?source=bs_xtKmrbb9,et_lessons||source - bs_xtKmrbb9,Unknown,-1
+ru,Учение Десяти Сфирот,243.00,Talmud Eser Sphirot,,https://kabbalahmedia.info/ru/sources/9xNFLSSp,et_sources|9xNFLSSp|,Unknown,-1
+ru,Часть 4. Десять сфирот акудим,121.50,Talmud Eser Sphirot,,https://kabbalahmedia.info/ru/sources/1kDKQxJb?page=209,et_sources|1kDKQxJb|,Good,2
+ru,Часть 4. Десять сфирот акудим,121.50,Talmud Eser Sphirot,,https://kabbalahmedia.info/he/lessons?source=bs_xtKmrbb9_e2jgBKLL_1kDKQxJb,et_lessons||source - bs_xtKmrbb9_e2jgBKLL_1kDKQxJb,Good,1
+ru,Дибров,10.30,Guest,,https://kabbalahmedia.info/ru/search?q=%D0%B4%D0%B8%D0%B1%D1%80%D0%BE%D0%B2,et_bad_structure||,Unknown,-1
+ru,дрори,10.30,Guest,,https://kabbalahmedia.info/ru/events/cu/mgLQmqkl?language=ru,et_content_units|mgLQmqkl|,Good,1
+ru,хачатурян,10.30,Guest,,https://kabbalahmedia.info/ru/search?q=%D1%85%D0%B0%D1%87%D0%B0%D1%82%D1%83%D1%80%D1%8F%D0%BD,et_bad_structure||,Unknown,-1
+ru,супружество,102.30,Integral education,,https://kabbalahmedia.info/ru/programs?topic=VUpFlBnu_pXpozaXB_BdfLfqsa,et_programs||topic - VUpFlBnu_pXpozaXB_BdfLfqsa,Good,2
+ru,дети,102.30,Integral education,,https://kabbalahmedia.info/ru/programs?topic=VUpFlBnu_pXpozaXB_g4WzYPpT,et_programs||topic - VUpFlBnu_pXpozaXB_g4WzYPpT,Unknown,-1
+ru,здоровье,102.30,Integral education,,https://kabbalahmedia.info/ru/programs?topic=VUpFlBnu_jwqdSTx0_AdZ2fZcv,et_programs||topic - VUpFlBnu_jwqdSTx0_AdZ2fZcv,Good,2
+ru,Конгресс в Москве,256.70,Congress,,https://kabbalahmedia.info/ru/events?location=Russia%7CMoscow,et_landing_page|events|location - Russia%7CMoscow,Unknown,-1
+ru,Арава,256.70,Congress,,https://kabbalahmedia.info/ru/events?location=Israel%7CArava,et_landing_page|events|location - Israel%7CArava,Unknown,-1
+ru,женский конгресс,64.17,Congress,,https://kabbalahmedia.info/ru/events/c/cyqhnq9J,et_collections|cyqhnq9J|,Regular,4
+ru,женский конгресс,64.17,Congress,,https://kabbalahmedia.info/ru/events/c/aXpTpUWD,et_collections|aXpTpUWD|,Good,1
+ru,женский конгресс,64.17,Congress,,https://kabbalahmedia.info/ru/events/c/VhbyFhVW,et_collections|VhbyFhVW|,Good,3
+ru,женский конгресс,64.17,Congress,,https://kabbalahmedia.info/ru/events/c/sUA9vBdk,et_collections|sUA9vBdk|,Good,2
+ru,сочи,23.30,Group from world KLI,,https://kabbalahmedia.info/ru/events?location=Russia%7CSochi,et_landing_page|events|location - Russia%7CSochi,Unknown,-1
+ru,одесса,23.30,Group from world KLI,,https://kabbalahmedia.info/ru/events?location=Ukraine%7COdessa,et_landing_page|events|location - Ukraine%7COdessa,Unknown,-1
+ru,Тбилиси,23.30,Group from world KLI,,https://kabbalahmedia.info/ru/events?location=Georgia%7CTbilisi,et_landing_page|events|location - Georgia%7CTbilisi,Unknown,-1
+ru,подготовка к уроку,14.70,Preparations,,https://kabbalahmedia.info/ru/search?q=%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BA%20%D1%83%D1%80%D0%BE%D0%BA%D1%83,et_bad_structure||,Unknown,-1
+ru,подготовка,14.70,Preparations,,https://kabbalahmedia.info/ru/search?q=%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BA%20%D1%83%D1%80%D0%BE%D0%BA%D1%83,et_bad_structure||,Unknown,-1
+ru,подготовка к конгрессу,14.70,Preparations,,https://kabbalahmedia.info/ru/search?q=%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BA%20%D0%BA%D0%BE%D0%BD%D0%B3%D1%80%D0%B5%D1%81%D1%81%D1%83,et_bad_structure||,Unknown,-1
+ru,винокур,27.00,Lecturer - Friend,,https://kabbalahmedia.info/ru/search?q=%D0%B2%D0%B8%D0%BD%D0%BE%D0%BA%D1%83%D1%80,et_bad_structure||,Unknown,-1
+ru,орен леви,27.00,Lecturer - Friend,,https://kabbalahmedia.info/ru/search?q=%D0%BE%D1%80%D0%B5%D0%BD%20%D0%BB%D0%B5%D0%B2%D0%B8,et_bad_structure||,Unknown,-1
+ru,ульянов,27.00,Lecturer - Friend,,https://kabbalahmedia.info/ru/search?q=%D1%83%D0%BB%D1%8C%D1%8F%D0%BD%D0%BE%D0%B2,et_bad_structure||,Unknown,-1
+ru,Труды Бааль Сулама,168.70,Kabbalah Book,,https://kabbalahmedia.info/ru/search?q=%D0%A2%D1%80%D1%83%D0%B4%D1%8B%20%D0%91%D0%B0%D0%B0%D0%BB%D1%8C%20%D0%A1%D1%83%D0%BB%D0%B0%D0%BC%D0%B0&source=bs&section=filters.sections-filter.sources&language=ru&page=25,et_bad_structure||,Unknown,-1
+ru,песенник,168.70,Kabbalah Book,לא מצאתי שירון שאנו משתמשים בו בסעודות באתרים שלנו,https://kabbalahmedia.info/ru/search?q=%D0%BF%D0%B5%D1%81%D0%B5%D0%BD%D0%BD%D0%B8%D0%BA,et_bad_structure||,Unknown,-1
+ru,шавлей сулам,168.70,Kabbalah Book,"נושא החיפוש - שלבי הסולם. ספרים לא קיימים בארכיון. לינק #2 לרשימת מאמרי רב""ש לא עובד - צריך לתקן",https://kabbalahmedia.info/ru/sources/IHYcOU8k,et_sources|IHYcOU8k|,Unknown,-1
+ru,детский урок,6.35,Children Programs,,https://kabbalahmedia.info/ru/search?q=%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B9%20%D1%83%D1%80%D0%BE%D0%BA&page=7,et_bad_structure||,Unknown,-1
+ru,детский урок,6.35,Children Programs,,https://kabbalahmedia.info/ru/search?q=%D1%83%D1%80%D0%BE%D0%BA%20%D0%B4%D0%BB%D1%8F%20%D0%B4%D0%B5%D1%82%D0%B5%D0%B9&page=7,et_bad_structure||,Unknown,-1
+ru,урок для детей,6.35,Children Programs,,https://kabbalahmedia.info/ru/search?q=%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B9%20%D1%83%D1%80%D0%BE%D0%BA&page=7,et_bad_structure||,Unknown,-1
+ru,урок для детей,6.35,Children Programs,,https://kabbalahmedia.info/ru/search?q=%D1%83%D1%80%D0%BE%D0%BA%20%D0%B4%D0%BB%D1%8F%20%D0%B4%D0%B5%D1%82%D0%B5%D0%B9&page=7,et_bad_structure||,Unknown,-1
+ru,мультфильмы для детей,12.70,Children Programs,,Missing data in Archive,et_bad_structure||,Unknown,-1
+ru,спроси каббалиста,474.00,TV Program,,https://kabbalahmedia.info/ru/programs/c/TXrFZRBE,et_collections|TXrFZRBE|,Good,2
+ru,Последнее поколение,237.00,TV Program,,https://kabbalahmedia.info/ru/programs/c/DE7rP7vf,et_collections|DE7rP7vf|,Good,1
+ru,Последнее поколение,237.00,TV Program,,https://kabbalahmedia.info/ru/sources/oIrPpKn2,et_sources|oIrPpKn2|,Regular,4
+ru,шаг навстречу,474.00,TV Program,,https://kabbalahmedia.info/ru/search?q=%D0%A2%D0%B5%D0%BB%D0%B5%D0%B2%D0%B8%D0%B7%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%22%D0%A8%D0%B0%D0%B3%20%D0%BD%D0%B0%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%D1%83%22,et_bad_structure||,Unknown,-1
+ru,письмо,19.35,Letters,,https://kabbalahmedia.info/ru/sources/9ZIJ9CkI,et_sources|9ZIJ9CkI|,Unknown,-1
+ru,письмо,19.35,Letters,,https://kabbalahmedia.info/ru/sources/VUcyhrcS,et_sources|VUcyhrcS|,Unknown,-1
+ru,"Труды РАБАШа, Письма",38.70,Letters,,https://kabbalahmedia.info/ru/sources/VUcyhrcS,et_sources|VUcyhrcS|,Unknown,-1
+ru,письмо 42,19.35,Letters,,https://kabbalahmedia.info/ru/sources/lbuuR7FL,et_sources|lbuuR7FL|,Good,2
+ru,письмо 42,19.35,Letters,,https://kabbalahmedia.info/ru/sources/KSOhDjL5,et_sources|KSOhDjL5|,Regular,7
+ru,введение в науку каббала,296.85,Kabbalah Article,,https://kabbalahmedia.info/ru/sources/kB3eD83I,et_sources|kB3eD83I|,Regular,9
+ru,введение в науку каббала,296.85,Kabbalah Article,,https://kabbalahmedia.info/ru/lessons?source=bs_L2jMWyce_kB3eD83I,et_lessons||source - bs_L2jMWyce_kB3eD83I,Regular,8
+ru,РАБАША 1984 статья 7,296.85,Kabbalah Article,,https://kabbalahmedia.info/ru/sources/QpKRILZk,et_sources|QpKRILZk|,Unknown,-1
+ru,РАБАША 1984 статья 7,296.85,Kabbalah Article,,https://kabbalahmedia.info/ru/lessons?source=rb_rQ6sIUZK_QpKRILZk,et_lessons||source - rb_rQ6sIUZK_QpKRILZk,Unknown,-1
+ru,последнее поколение,148.43,Kabbalah Article,,https://kabbalahmedia.info/ru/sources/oIrPpKn2,et_sources|oIrPpKn2|,Regular,4
+ru,последнее поколение,148.43,Kabbalah Article,,https://kabbalahmedia.info/ru/programs/c/DE7rP7vf,et_collections|DE7rP7vf|,Good,1
+ru,последнее поколение,148.43,Kabbalah Article,,https://kabbalahmedia.info/ru/programs?source=bs_qMeV5M3Y_oIrPpKn2,et_programs||source - bs_qMeV5M3Y_oIrPpKn2,Good,3
+ru,последнее поколение,148.43,Kabbalah Article,,https://kabbalahmedia.info/ru/lessons?source=bs_qMeV5M3Y_oIrPpKn2,et_lessons||source - bs_qMeV5M3Y_oIrPpKn2,Good,2
+ru,Рабаш,18.80,Kabbalist,,https://kabbalahmedia.info/ru/persons/rabash,et_bad_structure||,Unknown,-1
+ru,Рабаш,18.80,Kabbalist,,https://kabbalahmedia.info/ru/sources/rQ6sIUZK,et_sources|rQ6sIUZK|,Regular,6
+ru,Рабаш,18.80,Kabbalist,,https://kabbalahmedia.info/ru/lessons?source=rb_rQ6sIUZK,et_lessons||source - rb_rQ6sIUZK,Good,1
+ru,Рабаш,18.80,Kabbalist,,https://kabbalahmedia.info/ru/lessons?source=rb_b8SHlrfH,et_lessons||source - rb_b8SHlrfH,Good,3
+ru,Рабаш,18.80,Kabbalist,,https://kabbalahmedia.info/he/programs?topic=0db5BBS3_ssPpRE7p_NreYiGEg,et_programs||topic - 0db5BBS3_ssPpRE7p_NreYiGEg,Unknown,-1
+ru,бааль сулам,31.33,Kabbalist,,https://kabbalahmedia.info/ru/persons/baal-hasulam,et_bad_structure||,Unknown,-1
+ru,бааль сулам,31.33,Kabbalist,,https://kabbalahmedia.info/he/sources/eKY6PhmO,et_sources|eKY6PhmO|,Unknown,-1
+ru,бааль сулам,31.33,Kabbalist,,https://kabbalahmedia.info/he/programs?topic=0db5BBS3_ssPpRE7p_RNxPnNjS,et_programs||topic - 0db5BBS3_ssPpRE7p_RNxPnNjS,Unknown,-1
+ru,Авраам,94.00,Kabbalist,,unclear intent,et_bad_structure||,Unknown,-1
+ru,распространение,12.50,Desimination,,https://kabbalahmedia.info/ru/search?q=%D0%A0%D0%B0%D1%81%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%D1%83%D0%BA%D0%B8%20%D0%BA%D0%B0%D0%B1%D0%B1%D0%B0%D0%BB%D0%B0,et_bad_structure||,Unknown,-1
+ru,конференция,6.25,Desimination,,https://kabbalahmedia.info/ru/search?q=%D0%BA%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8F&section=filters.sections-filter.lessons,et_bad_structure||,Unknown,-1
+ru,конференция,6.25,Desimination,,https://kabbalahmedia.info/ru/search?q=%D0%BA%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8F,et_bad_structure||,Unknown,-1
+ru,антисемитизм,22.00,Desimination Book,,https://kabbalahmedia.info/ru/search?q=%D0%90%D0%BD%D1%82%D0%B8%D1%81%D0%B5%D0%BC%D0%B8%D1%82%D0%B8%D0%B7%D0%BC,et_bad_structure||,Unknown,-1
+ru,Новая жизнь 1,396.00,New Life,,https://kabbalahmedia.info/ru/programs/cu/JmPywLDH,et_content_units|JmPywLDH|,Good,1
+ru,новая жизнь 218,396.00,New Life,,https://kabbalahmedia.info/ru/programs/cu/6UFViZlw,et_content_units|6UFViZlw|,Good,1
+ru,Беседы о новой жизни,396.00,New Life,,https://kabbalahmedia.info/ru/programs/c/zf4lLwyI,et_collections|zf4lLwyI|,Unknown,-1
+ru,новая жизнь здоровье,45.00,New Life + Topic,,https://kabbalahmedia.info/ru/programs/c/zf4lLwyI?topic=VUpFlBnu_jwqdSTx0_AdZ2fZcv,et_collections|zf4lLwyI|,Unknown,-1
+ru,новая жизнь беременность,45.00,New Life + Topic,,https://kabbalahmedia.info/ru/programs/c/zf4lLwyI?topic=VUpFlBnu_pXpozaXB_3cI4UcAW,et_collections|zf4lLwyI|,Unknown,-1
+ru,новая жизнь супружество,45.00,New Life + Topic,,https://kabbalahmedia.info/ru/programs/c/zf4lLwyI?topic=VUpFlBnu_pXpozaXB_BdfLfqsa,et_collections|zf4lLwyI|,Unknown,-1
+ru,семинары,20.00,Workshops,,https://kabbalahmedia.info/ru/search?q=%D1%81%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%D1%8B,et_bad_structure||,Unknown,-1
+ru,семинары,20.00,Workshops,,https://kabbalahmedia.info/ru/search?q=%D1%81%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%D1%8B&section=filters.sections-filter.lessons,et_bad_structure||,Unknown,-1
+ru,правила семинара,40.00,Workshops,,https://kabbalahmedia.info/ru/search?q=%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0%20%D1%81%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%D0%B0,et_bad_structure||,Unknown,-1
+ru,Новости,19.15,Clip,,https://kabbalahmedia.info/ru/search?q=%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8&section=filters.sections-filter.programs,et_bad_structure||,Unknown,-1
+ru,Новости,19.15,Clip,,https://kabbalahmedia.info/ru/search?q=%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8&section=filters.sections-filter.lessons,et_bad_structure||,Unknown,-1
+ru,Клип,38.30,Clip,,https://kabbalahmedia.info/ru/programs/clips,et_bad_structure||,Unknown,-1
+ru,стих ари,38.30,Clip,,https://kabbalahmedia.info/ru/search?q=%22%D0%97%D0%BD%D0%B0%D0%B9%2C%20%D0%B4%D0%BE%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%B0%20%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B1%D1%8B%D0%BB%20%D0%BB%D0%B8%D1%88%D1%8C%20%D0%B2%D1%8B%D1%81%D1%88%D0%B8%D0%B9%2C%20%D0%B2%D1%81%D0%B5%20%D1%81%D0%BE%D0%B1%D0%BE%D0%B9%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D1%8F%D1%8E%D1%89%D0%B8%D0%B9%20%D1%81%D0%B2%D0%B5%D1%82%E2%80%A6%22,et_bad_structure||,Unknown,-1
+ru,дорога к себе,12.00,Movie,,https://kabbalahmedia.info/ru/search?q=%D0%94%D0%BE%D1%80%D0%BE%D0%B3%D0%B0%20%D0%BA%20%D1%81%D0%B5%D0%B1%D0%B5,et_bad_structure||,Unknown,-1
+ru,фильм,12.00,Movie,,https://kabbalahmedia.info/ru/search?q=%D1%84%D0%B8%D0%BB%D1%8C%D0%BC&language=ru,et_bad_structure||,Unknown,-1
+ru,секрет зоар,35.90,Course,,https://kabbalahmedia.info/ru/lessons/cu/Lh4xt0W5?language=ru,et_content_units|Lh4xt0W5|,Good,1
+ru,секрет зоар,35.90,Course,,https://lp.kabacademy.com/way_to_yourself/?utm_source=IS_edu.kabacademy&utm_medium=Ret&utm_campaign=7_MO_RUS_INT_vesna_2018,et_bad_structure||,Unknown,-1
+ru,псалмы,37.70,Psalms,,https://kabbalahmedia.info/ru/search?q=%D0%A2%D0%B5%D0%B8%D0%BB%D0%B8%D0%BC%20-%20%D0%BF%D1%81%D0%B0%D0%BB%D0%BC%D1%8B%20%D1%86%D0%B0%D1%80%D1%8F%20%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%D0%B0,et_bad_structure||,Unknown,-1
+ru,псалмы давида,37.70,Psalms,,https://kabbalahmedia.info/ru/search?q=%D0%A2%D0%B5%D0%B8%D0%BB%D0%B8%D0%BC%20-%20%D0%BF%D1%81%D0%B0%D0%BB%D0%BC%D1%8B%20%D1%86%D0%B0%D1%80%D1%8F%20%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%D0%B0,et_bad_structure||,Unknown,-1
+ru,теилим,37.70,Psalms,,https://kabbalahmedia.info/ru/search?q=%D0%A2%D0%B5%D0%B8%D0%BB%D0%B8%D0%BC%20-%20%D0%BF%D1%81%D0%B0%D0%BB%D0%BC%D1%8B%20%D1%86%D0%B0%D1%80%D1%8F%20%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%D0%B0,et_bad_structure||,Unknown,-1
+ru,Радио-версия блога Михаэля Лайтмана,142.00,Radio,,https://www.laitman.ru/topics/radio-versiya-bloga,et_bad_structure||,Unknown,-1
+ru,радио версия,142.00,Radio,,https://www.laitman.ru/topics/radio-versiya-bloga,et_bad_structure||,Unknown,-1
+ru,иврит,9.50,Hebrew,,https://kabbalahmedia.info/ru/search?q=%D0%B8%D0%B2%D1%80%D0%B8%D1%82,et_bad_structure||,Unknown,-1
+ru,иврит,9.50,Hebrew,,https://www.youtube.com/channel/UCKv3VKWs3ndkM7ijBzF1crQ,et_bad_structure||,Unknown,-1
+ru,каббалистический иврит учебное пособие,19.00,Hebrew,,http://www.kabbalah.info/rus/content/view/frame/75825?/rus/content/view/full/75825&main,et_bad_structure||,Unknown,-1
+ru,уроки иврита,19.00,Hebrew,,https://www.youtube.com/channel/UCKv3VKWs3ndkM7ijBzF1crQ,et_bad_structure||,Unknown,-1
+ru,"Дистанционный курс ""Восприятие реальности""",71.80,Course,,https://kabacademy.com/home-2/,et_bad_structure||,Unknown,-1
+ru,Схема мироздания,71.80,Course,,https://kabacademy.com/home-2/,et_bad_structure||,Unknown,-1
+ru,уроки иврита,71.80,Course,,https://www.youtube.com/channel/UCKv3VKWs3ndkM7ijBzF1crQ,et_bad_structure||,Unknown,-1
+ru,Статья дня,41.00,Noon Article,,sviva tova,et_bad_structure||,Unknown,-1
+ru,трапеза,22.75,Meals,,https://kabbalahmedia.info/ru/events/meals,et_landing_page|meals|,Unknown,-1
+ru,трапеза,22.75,Meals,,https://kabbalahmedia.info/ru/search?q=%D0%A2%D1%80%D0%B0%D0%BF%D0%B5%D0%B7%D0%B0%20%D0%BA%D0%B0%D0%B1%D0%B1%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2,et_bad_structure||,Unknown,-1
+ru,Тиш,22.75,Meals,,https://kabbalahmedia.info/ru/events/meals,et_landing_page|meals|,Unknown,-1
+ru,Тиш,22.75,Meals,,https://kabbalahmedia.info/ru/search?q=%D1%82%D0%B8%D1%88,et_bad_structure||,Unknown,-1
+ru,вебинар,113.00,Webinar,,https://kabbalahmedia.info/ru/lessons/virtual/c/VwCQ0OBq,et_collections|VwCQ0OBq|,Good,2
+ru,вебинар,113.00,Webinar,,https://kabbalahmedia.info/ru/lessons/virtual,et_landing_page|virtual|,Unknown,-1
+ru,чертеж,14.00,Scatches,,לא ניתן כרגע להגיע לשירטוטים לא דרך שיעור ספציפי.,et_bad_structure||,Unknown,-1
+ru,рисунок,14.00,Scatches,,לא ניתן כרגע להגיע לשירטוטים לא דרך שיעור ספציפי.,et_bad_structure||,Unknown,-1
+ru,ешиват,42.30,Yeshivat Haverim,,https://kabbalahmedia.info/ru/events/friends-gatherings,et_landing_page|friends-gatherings|,Unknown,-1
+ru,собрание товарищей,42.30,Yeshivat Haverim,,https://kabbalahmedia.info/ru/events/friends-gatherings,et_landing_page|friends-gatherings|,Unknown,-1
+ru,ешиват хаверим,42.30,Yeshivat Haverim,,https://kabbalahmedia.info/ru/events/friends-gatherings,et_landing_page|friends-gatherings|,Unknown,-1

@@ -281,11 +281,7 @@ func (index *SourcesIndex) loadSources(db *sql.DB, sqlScope string) (map[string]
 }
 
 func (index *SourcesIndex) getDocxPath(uid string, lang string) (string, error) {
-	folder, err := SourcesFolder()
-	if err != nil {
-		return "", err
-	}
-	uidPath := path.Join(folder, uid)
+	uidPath := path.Join(SourcesFolder(), uid)
 	jsonPath := path.Join(uidPath, "index.json")
 	jsonCnt, err := ioutil.ReadFile(jsonPath)
 	if err != nil {

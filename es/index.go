@@ -13,7 +13,6 @@ import (
 	"github.com/spf13/viper"
 	"gopkg.in/olivere/elastic.v6"
 
-	"github.com/Bnei-Baruch/archive-backend/bindata"
 	"github.com/Bnei-Baruch/archive-backend/consts"
 	"github.com/Bnei-Baruch/archive-backend/utils"
 )
@@ -336,6 +335,7 @@ func (index *BaseIndex) indexAliasName(lang string) string {
 func (index *BaseIndex) CreateIndex() error {
 	for _, lang := range consts.ALL_KNOWN_LANGS {
 		name := index.IndexName(lang)
+
 		// Do nothing if index already exists.
 		exists, err := index.esc.IndexExists(name).Do(context.TODO())
 		log.Debugf("Create index, exists: %t.", exists)
@@ -347,11 +347,10 @@ func (index *BaseIndex) CreateIndex() error {
 			continue
 		}
 
-		definition := fmt.Sprintf("data/es/mappings/%s/%s-%s.json", index.baseName, index.baseName, lang)
-		// Read mappings and create index
-		mappings, err := bindata.Asset(definition)
+		// Read mappings
+		mappings, err := ReadDataFile(fmt.Sprintf("%s-%s.json", index.baseName, lang), "es", "mappings", index.baseName)
 		if err != nil {
-			return errors.Wrapf(err, "Failed loading mapping %s", definition)
+			return errors.Wrapf(err, "Read mapping file")
 		}
 		var bodyJson map[string]interface{}
 		if err = json.Unmarshal(mappings, &bodyJson); err != nil {

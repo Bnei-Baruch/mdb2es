@@ -2,103 +2,17 @@ package es
 
 import (
 	"database/sql"
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"net/http"
-	"strings"
 	"sync"
 	"time"
 
 	"github.com/Bnei-Baruch/sqlboiler/queries"
 	log "github.com/Sirupsen/logrus"
 	"github.com/pkg/errors"
+
+	"github.com/Bnei-Baruch/archive-backend/integration"
 )
-
-var httpClient = &http.Client{
-	Timeout: 600 * time.Second,
-}
-
-func DocText(uid string) (string, error) {
-	resp, err := httpClient.Get(fmt.Sprintf("%s/doc2text/%s", unzipUrl, uid))
-	if err != nil {
-		log.Warnf("Error preparing docs, Error: %+v", err)
-		return "", err
-	}
-	if resp.StatusCode == http.StatusOK {
-		defer resp.Body.Close()
-		bodyBytes, err := ioutil.ReadAll(resp.Body)
-		if err != nil {
-			return "", err
-		}
-		bodyString := string(bodyBytes)
-		return bodyString, nil
-	} else {
-		log.Warnf("Response code %d for %s, skip.", resp.StatusCode, uid)
-		return "", nil
-	}
-}
-
-type unzipResponse struct {
-	Code    int    `json:"code"`
-	Message string `json:"message"`
-}
-
-func Prepare(uids []string) (error, bool, map[string]int) {
-	successMap := make(map[string]int)
-	for _, uid := range uids {
-		successMap[uid] = -1
-	}
-	// Prepare docs batch.
-	log.Debugf("Preparing %s docs to docx.", strings.Join(uids, ","))
-	resp, err := httpClient.Get(fmt.Sprintf("%s/prepare/%s", unzipUrl, strings.Join(uids, ",")))
-	log.Debug("Finished Trying Get.")
-	if err != nil {
-		log.Warnf("Error preparing docs, Error: %+v.", err)
-		return err, false, successMap
-	}
-	if resp.StatusCode != http.StatusOK { // OK
-		log.Errorf("Response code %d for %s, error.", resp.StatusCode, strings.Join(uids, ","))
-		return err, false, successMap
-	}
-	body, err := ioutil.ReadAll(resp.Body)
-	log.Debug("Finished reading body.")
-	if err != nil {
-		log.Error("Could not read response body.")
-		return err, false, successMap
-	}
-
-	var data []unzipResponse
-	json.Unmarshal(body, &data)
-
-	if len(data) != len(uids) {
-		return errors.New(fmt.Sprintf("Response length is not as request uids length. Expected %d, got %d", len(uids), len(data))), false, successMap
-	}
-
-	backoff := false
-	var errors []string
-	log.Debugf("Ranging over data: %v", data)
-	for i, internalResponse := range data {
-		successMap[uids[i]] = internalResponse.Code
-		if internalResponse.Code == http.StatusServiceUnavailable {
-			// Backoff
-			backoff = true
-		} else if internalResponse.Code != http.StatusOK {
-			// Don't repeat request, continue.
-			errors = append(errors, internalResponse.Message)
-		}
-	}
-	if len(errors) > 0 {
-		log.Warn(strings.Join(errors, ","))
-	}
-	if backoff {
-		log.Debug("Successfully done, backoff: true.")
-		return nil, true, successMap
-	} else {
-		log.Debug("Successfully done, backoff: false.")
-		return nil, false, successMap
-	}
-}
 
 func loadDocs(db *sql.DB) ([]string, error) {
 	rows, err := queries.Raw(db, `
@@ -176,6 +90,8 @@ func ConvertDocx(db *sql.DB) error {
 	waitDone.Add(parallelism)
 	batchesDone := 0
 
+	assetsService := integration.NewAssetsService(unzipUrl)
+
 	prepareMutex := &sync.Mutex{}
 	prepareErr := error(nil)
 	successMap := make(map[string]int)
@@ -196,14 +112,25 @@ func ConvertDocx(db *sql.DB) error {
 						log.Debugf("Bakoff[%d], sleep %.2f, retry: %d", j, sleep.Seconds(), 5-retries)
 						time.Sleep(sleep)
 					}
+
 					var batchSuccessMap map[string]int
-					// ERR SHOULD BE LAST
-					err, tryRetry, batchSuccessMap = Prepare(batch)
+					tryRetry, batchSuccessMap, err = assetsService.Prepare(batch)
+					if err != nil {
+						log.Warnf("Error while Prepare %d / %d. Error: %s", currentBatchDone, len(notEmptyDocs)/batchSize, err)
+						prepareMutex.Lock()
+						if prepareErr != nil {
+							prepareErr = err
+						}
+						prepareMutex.Unlock()
+						break
+					}
+
 					if tryRetry {
 						log.Debugf("Try retry[%d]: true", j)
 					} else {
 						log.Debugf("Try retry[%d]: false", j)
 					}
+
 					shouldBreak := false
 					nextBatch := []string{}
 					prepareMutex.Lock()
@@ -213,7 +140,7 @@ func ConvertDocx(db *sql.DB) error {
 							if currentCode != http.StatusOK {
 								successMap[uid] = code
 							} else if code != http.StatusOK {
-								errStr := fmt.Sprintf("Making things worse, had %d for uid %s not got %d.", currentCode, uid, code)
+								errStr := fmt.Sprintf("Making things worse, had %d for uid %s now got %d.", currentCode, uid, code)
 								log.Error(errStr)
 								if prepareErr == nil {
 									prepareErr = errors.New(errStr)
@@ -234,15 +161,6 @@ func ConvertDocx(db *sql.DB) error {
 					prepareMutex.Unlock()
 					if shouldBreak {
 						log.Errorf("Breaking[%d]... Due to: %s.", j, reason)
-						break
-					}
-					if err != nil {
-						log.Warnf("Error while Prepare %d / %d. Error: %s", currentBatchDone, len(notEmptyDocs)/batchSize, err)
-						prepareMutex.Lock()
-						if prepareErr != nil {
-							prepareErr = err
-						}
-						prepareMutex.Unlock()
 						break
 					}
 					if tryRetry {

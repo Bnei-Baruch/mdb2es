@@ -2,6 +2,18 @@
 
 
 [[projects]]
+  digest = "1:55254618aa3cc3dca8ef889ca454d314c24bce4702a6ec54577442308ce744a4"
+  name = "code.sajari.com/docconv"
+  packages = [
+    ".",
+    "iWork",
+    "snappy",
+  ]
+  pruneopts = "UT"
+  revision = "eedabc494f8e97c31f94c70453273f16dbecbc6f"
+  version = "v1.1.0"
+
+[[projects]]
   branch = "master"
   digest = "1:443f6a64ae0976612fc1e3aab894304b945d056b8b4d1091ac4167864a92bf93"
   name = "github.com/Bnei-Baruch/sqlboiler"
@@ -13,6 +25,22 @@
   ]
   pruneopts = "UT"
   revision = "c0262723a40fe7bc0e33a8d92bb0d62ab368386d"
+
+[[projects]]
+  branch = "master"
+  digest = "1:b357150cc93d5dea09cf4d36a7acbae83ec47eddf85e25cc43edfa1c7fb0b83e"
+  name = "github.com/JalfResi/justext"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "c0282dea71984da06b2f154dcd2b06da3948aa06"
+
+[[projects]]
+  digest = "1:573fa46f8d413d4bc3f7cc5e86b2c43cb21559f4fb0a19d9874d228e28fdc07c"
+  name = "github.com/PuerkitoBio/goquery"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "2d2796f41742ece03e8086188fa4db16a3a0b458"
+  version = "v1.5.0"
 
 [[projects]]
   digest = "1:e89ce6ee527e696ff8c545c5ee18d8156ccaaa1b57b6cfb29f7a4ec0ef12dd40"
@@ -27,6 +55,22 @@
   packages = ["."]
   pruneopts = "UT"
   revision = "e8691489d4025904369f4f585138748c89db3ea4"
+
+[[projects]]
+  branch = "dev"
+  digest = "1:b60ede6f9e9974c3671f324ba3b89288e327ce0661dd556f671413606b3f1145"
+  name = "github.com/advancedlogic/GoOse"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "64521da6c799cec72d13736c21577d4eb9589a26"
+
+[[projects]]
+  digest = "1:24ffaa1636eba8f0cfc7671121d05a9a2040605adb1927a93be88fbc2ea6cfdb"
+  name = "github.com/andybalholm/cascadia"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "b69f6c92dfc187ebfe3914df716c2647a3af0ba0"
+  version = "v1.1.0"
 
 [[projects]]
   digest = "1:a2c1d0e43bd3baaa071d1b9ed72c27d78169b2b269f71c105ac4ba34b1be4a39"
@@ -96,6 +140,14 @@
   pruneopts = "UT"
   revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
   version = "v1.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:c36ee1111977177b3acbd98c5cf567218d94a05021365e7df752012f6a7cf5fe"
+  name = "github.com/levigross/exp-html"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "8df60c69a8f5b0fe4a72ff6ae3811d4b57154e39"
 
 [[projects]]
   digest = "1:e5aba4983d6e8cbb6ab532614d8721fb7530920fc0e85432c95a955fcd589310"
@@ -206,6 +258,17 @@
   version = "v6.1.24"
 
 [[projects]]
+  digest = "1:7ccef172acdde402715f443a85d8c9acbdd48570139eda4f9b224305c0049c69"
+  name = "github.com/otiai10/gosseract"
+  packages = [
+    "v1/gosseract",
+    "v1/gosseract/tesseract",
+  ]
+  pruneopts = "UT"
+  revision = "ff587f106ee83627349e2868111c9494105a93ac"
+  version = "v2.0"
+
+[[projects]]
   digest = "1:b2ee62e09bec113cf086d2ce0769efcc7bf79481aba8373fd8f7884e94df3462"
   name = "github.com/pelletier/go-buffruneio"
   packages = ["."]
@@ -310,19 +373,6 @@
   revision = "3eb4713e2655cd1be805795be31b3f85b74b05fd"
 
 [[projects]]
-  digest = "1:2643d81498e38e44bdcf480be199cac55f29e97403b0342d962824bfe9960722"
-  name = "github.com/ulikunitz/xz"
-  packages = [
-    ".",
-    "internal/hash",
-    "internal/xlog",
-    "lzma",
-  ]
-  pruneopts = "UT"
-  revision = "6f934d456d51e742b4eeab20d925a827ef22320a"
-  version = "v0.5.6"
-
-[[projects]]
   branch = "master"
   digest = "1:dd70bca92c5f88f5d6a098eaa570f604d52a460d82b81e1418c9559f6a742612"
   name = "github.com/volatiletech/inflect"
@@ -331,15 +381,17 @@
   revision = "e7201282ae8da26cd97aed2e516f75c0bd91bb93"
 
 [[projects]]
-  digest = "1:52358b59dc35a6ef4f8cd0ab912fe6f3a0ce9be7be2e5bda6b7d4310525f376e"
+  branch = "master"
+  digest = "1:0833127d23119e00953789e2d05e4800a38a512c5e58e20196cee7d24cedf785"
   name = "golang.org/x/net"
   packages = [
     "context",
     "html",
     "html/atom",
+    "html/charset",
   ]
   pruneopts = "UT"
-  revision = "fe686d45ea04bc1bd4eff6a52865ce8757320325"
+  revision = "c0dbc17a35534bf2e581d7a942408dc936316da4"
 
 [[projects]]
   digest = "1:007d7b2c1dc7b669d21ce8356494fb6da331b3e43e27e669ab1a7a1b7ccbdfad"
@@ -349,21 +401,45 @@
   revision = "fb4cac33e3196ff7f507ab9b2d2a44b0142f5b5a"
 
 [[projects]]
-  digest = "1:6094be0e858c32d9f2dd3267b5307e9848521457fe4ffe3e54154db507dd66bb"
+  branch = "master"
+  digest = "1:6f9d27969fc181918433484180ab1b858d5a23be201caf3bbe4a0c71b4e137cc"
   name = "golang.org/x/text"
   packages = [
+    "encoding",
+    "encoding/charmap",
+    "encoding/htmlindex",
+    "encoding/internal",
+    "encoding/internal/identifier",
+    "encoding/japanese",
+    "encoding/korean",
+    "encoding/simplifiedchinese",
+    "encoding/traditionalchinese",
+    "encoding/unicode",
+    "internal/format",
     "internal/gen",
+    "internal/language",
+    "internal/language/compact",
     "internal/tag",
     "internal/triegen",
     "internal/ucd",
+    "internal/utf8internal",
     "language",
     "language/display",
+    "runes",
     "transform",
     "unicode/cldr",
     "unicode/norm",
   ]
   pruneopts = "UT"
-  revision = "9e2f80a6ba7ed4ba13e0cd4b1f094bf916875735"
+  revision = "929e72ca90deac4784bbe451caf10faa5b256ebe"
+
+[[projects]]
+  digest = "1:3ccd10c863188cfe0d936fcfe6a055c95362e43af8e7039e33baade846928e74"
+  name = "gopkg.in/fatih/set.v0"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "57907de300222151a123d29255ed17f5ed43fad3"
+  version = "v0.1.0"
 
 [[projects]]
   digest = "1:d00c26e8630a45fcce6f35bf6a4da77871821c82a6508b033d917aef7c1c49a8"
@@ -427,6 +503,7 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "code.sajari.com/docconv",
     "github.com/Bnei-Baruch/sqlboiler/boil",
     "github.com/Bnei-Baruch/sqlboiler/queries",
     "github.com/Bnei-Baruch/sqlboiler/queries/qm",
@@ -442,7 +519,6 @@
     "github.com/stretchr/testify/require",
     "github.com/stretchr/testify/suite",
     "github.com/stvp/rollbar",
-    "github.com/ulikunitz/xz",
     "golang.org/x/net/context",
     "golang.org/x/text/language",
     "golang.org/x/text/language/display",

@@ -195,25 +195,20 @@ func mkdir(permissions os.FileMode, dirs ...string) (err error) {
 	return
 }
 
-/* Create passive directory */
+// prepareDirectories create the required folders in the next active folder
 func prepareDirectories() (workDir string, err error) {
 	workDir = filepath.Join(config.assets, fmt.Sprint(time.Now().Unix()))
 
-	if err = mkdir(0755, workDir, "banners"); err != nil {
-		return "", errors.Wrapf(err, "mkdir banners: %s/banners", workDir)
-	}
-
-	if err = mkdir(0755, workDir, "persons"); err != nil {
-		return "", errors.Wrapf(err, "mkdir persons: %s/persons", workDir)
-	}
-
-	if err = mkdir(0755, workDir, "sources"); err != nil {
-		return "", errors.Wrapf(err, "mkdir sources: %s/sources", workDir)
+	for _,folder := range []string{"banners", "persons", "sources"} {
+		if err = mkdir(0755, workDir, folder); err != nil {
+			return "", errors.Wrapf(err, "mkdir %s/%s", workDir, folder)
+		}
 	}
 
 	return workDir, nil
 }
 
+// switchDirectories re-creates the "active" symlink to the fresh workDir just created
 func switchDirectories() (err error) {
 	var active = filepath.Join(config.assets, "active")
 	_, err = os.Lstat(active)
@@ -222,12 +217,12 @@ func switchDirectories() (err error) {
 			return errors.Wrapf(err, " os.Remove: %s", active)
 		}
 	}
-	absWorkDir, err := filepath.Abs(config.workDir)
-	if err != nil {
-		return errors.Wrapf(err, "filepath.Abs: %s", config.workDir)
-	}
-	if err = os.Symlink(absWorkDir, active); err != nil {
-		return errors.Wrapf(err, "os.Symlink: %s to %s", active, absWorkDir)
+
+	//  A relative symlink is used to allow different deployment environments.
+	// In docker-compose, we and nginx mount the shared config.assets volume into different paths.
+	workDirBase := filepath.Base(config.workDir)
+	if err = os.Symlink(workDirBase, active); err != nil {
+		return errors.Wrapf(err, "os.Symlink: %s to %s", active, workDirBase)
 	}
 	return
 }

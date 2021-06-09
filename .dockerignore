@@ -1,0 +1,22 @@
+# Common
+README.md
+CHANGELOG.md
+LICENSE
+*.log
+
+# git
+.git
+.gitattributes
+.gitignore
+
+# JetBrains
+.idea
+projectFilesBackup
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# App
+assets

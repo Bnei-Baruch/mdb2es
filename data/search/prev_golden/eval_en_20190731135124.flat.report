@@ -1,0 +1,162 @@
+Language,Query,Weight,Bucket,Comment,Expectation,Parsed,SearchQuality,Rank
+en,group,7.50,קבוצה,,Book: Rabash—The Social Writings,et_bad_structure||,BadStructure,-1
+en,toronto,3.75,קבוצה,,https://kabbalahmedia.info/en/events/c/OiFISWga?language=en,et_collections|OiFISWga|,Unknown,-1
+en,toronto,3.75,קבוצה,,https://kabbalahmedia.info/en/events?location=Canada%7CToronto,et_landing_page|events|location - Canada%7CToronto,Unknown,-1
+en,arvut,164.15,נושא בקבלה,,https://kabbalahmedia.info/sources/itcVAcFn,et_sources|itcVAcFn|,Good,3
+en,arvut,164.15,נושא בקבלה,,https://kabbalahmedia.info/lessons?source=bs_qMeV5M3Y_itcVAcFn,et_lessons||source - bs_qMeV5M3Y_itcVAcFn,Good,2
+en,tens,82.08,נושא בקבלה,,https://kabbalahmedia.info/lessons?topic=0db5BBS3_Gvm4nh0t_6lI2zgHp,et_lessons||topic - 0db5BBS3_Gvm4nh0t_6lI2zgHp,Regular,10
+en,tens,82.08,נושא בקבלה,,https://kabbalahmedia.info/programs?topic=0db5BBS3_Gvm4nh0t_6lI2zgHp,et_programs||topic - 0db5BBS3_Gvm4nh0t_6lI2zgHp,Unknown,-1
+en,tens,82.08,נושא בקבלה,,https://kabbalahmedia.info/sources/VLuOsaN3,et_sources|VLuOsaN3|,Unknown,-1
+en,tens,82.08,נושא בקבלה,,https://kabbalahmedia.info/sources/SCW5jePa,et_sources|SCW5jePa|,Unknown,-1
+en,revelation,164.15,נושא בקבלה,"After sources, should have lessons based on the sources listed from most recent to oldest",https://kabbalahmedia.info/sources/6K5za3Hd,et_sources|6K5za3Hd|,Unknown,-1
+en,revelation,164.15,נושא בקבלה,"After sources, should have lessons based on the sources listed from most recent to oldest",https://kabbalahmedia.info/sources/OaIuUScv,et_sources|OaIuUScv|,Unknown,-1
+en,women,171.50,נשים,"After sources, should have all women's lessons and conversations organized from most recent to oldest.",https://kabbalahmedia.info/lessons/women,et_landing_page|lessons/women|,Good,1
+en,women,171.50,נשים,"After sources, should have all women's lessons and conversations organized from most recent to oldest.",https://kabbalahmedia.info/sources/e2kN9ggm,et_sources|e2kN9ggm|,Regular,4
+en,purim,42.67,חגים,"After reference page, then sources, lessons on Purim from most recent to oldest.",http://www.kabbalah.info/bb/purim-meaning/,et_bad_structure||,BadStructure,-1
+en,purim,42.67,חגים,"After reference page, then sources, lessons on Purim from most recent to oldest.",https://kabbalahmedia.info/events/c/BTc81T71?language=en,et_collections|BTc81T71|,Good,2
+en,purim,42.67,חגים,"After reference page, then sources, lessons on Purim from most recent to oldest.",https://kabbalahmedia.info/programs?topic=g3ml0jum_1nyptSIo_ZjqGWdYE,et_programs||topic - g3ml0jum_1nyptSIo_ZjqGWdYE,Unknown,-1
+en,purim,42.67,חגים,"After reference page, then sources, lessons on Purim from most recent to oldest.",https://kabbalahmedia.info/events/holidays?holidays=ZjqGWdYE,et_landing_page|holidays|,Unknown,-1
+en,pesach,34.14,חגים,"After third result, make sure results are organized chronologically from most recent year to oldest",http://www.kabbalah.info/bb/passover-meaning,et_bad_structure||,BadStructure,-1
+en,pesach,34.14,חגים,"After third result, make sure results are organized chronologically from most recent year to oldest",https://kabbalahmedia.info/lessons?topic=g3ml0jum_1nyptSIo_RWqjxgkj,et_lessons||topic - g3ml0jum_1nyptSIo_RWqjxgkj,Unknown,-1
+en,pesach,34.14,חגים,"After third result, make sure results are organized chronologically from most recent year to oldest",https://kabbalahmedia.info/programs?topic=g3ml0jum_1nyptSIo_RWqjxgkj,et_programs||topic - g3ml0jum_1nyptSIo_RWqjxgkj,Unknown,-1
+en,pesach,34.14,חגים,"After third result, make sure results are organized chronologically from most recent year to oldest",https://kabbalahmedia.info/events/c/PWOJ9aPK,et_collections|PWOJ9aPK|,Good,2
+en,pesach,34.14,חגים,"After third result, make sure results are organized chronologically from most recent year to oldest",https://kabbalahmedia.info/events/holidays?holidays=RWqjxgkj,et_landing_page|holidays|,Unknown,-1
+en,shavuot,34.14,חגים,,http://www.kabbalah.info/bb/shavuot-meaning/,et_bad_structure||,BadStructure,-1
+en,shavuot,34.14,חגים,,https://kabbalahmedia.info/lessons?topic=g3ml0jum_1nyptSIo_MyLcuAgH,et_lessons||topic - g3ml0jum_1nyptSIo_MyLcuAgH,Unknown,-1
+en,shavuot,34.14,חגים,,https://kabbalahmedia.info/programs?topic=g3ml0jum_1nyptSIo_MyLcuAgH,et_programs||topic - g3ml0jum_1nyptSIo_MyLcuAgH,Unknown,-1
+en,shavuot,34.14,חגים,,https://kabbalahmedia.info/events/c/CENjlZNr,et_collections|CENjlZNr|,Unknown,-1
+en,shavuot,34.14,חגים,,https://kabbalahmedia.info/events/holidays?holidays=MyLcuAgH,et_landing_page|holidays|,Unknown,-1
+en,shamati,483.50,שמעתי,,https://kabbalahmedia.info/sources/qMUUn22b,et_sources|qMUUn22b|,Regular,5
+en,shamati,483.50,שמעתי,,https://kabbalahmedia.info/lessons?source=bs_qMUUn22b,et_lessons||source - bs_qMUUn22b,Good,2
+en,shamati 1,483.50,שמעתי,"(1) Searches for ""shamati"" + ""number"" do not open the article number, i.e. article number is not recognized by the system. It needs to be implemented so that the article number appears, and the article itself appears as the first search result for each ""shamati"" + ""number"" (2) After 2nd result, chronological listing of Shamati lessons from most recent to oldest",https://kabbalahmedia.info/sources/hFeGidcS,et_sources|hFeGidcS|,Unknown,-1
+en,shamati 1,483.50,שמעתי,"(1) Searches for ""shamati"" + ""number"" do not open the article number, i.e. article number is not recognized by the system. It needs to be implemented so that the article number appears, and the article itself appears as the first search result for each ""shamati"" + ""number"" (2) After 2nd result, chronological listing of Shamati lessons from most recent to oldest",https://kabbalahmedia.info/lessons?source=bs_qMUUn22b_hFeGidcS,et_lessons||source - bs_qMUUn22b_hFeGidcS,Unknown,-1
+en,sviva-tova,294.30,אתר,,http://www.kabbalahgroup.info,et_bad_structure||,BadStructure,-1
+en,svivatova,294.30,אתר,,http://www.kabbalahgroup.info,et_bad_structure||,BadStructure,-1
+en,kab.tv,147.15,אתר,,http://www.kab.tv,et_bad_structure||,BadStructure,-1
+en,kab.tv,147.15,אתר,,http://www.kabbalahgroup.info,et_bad_structure||,BadStructure,-1
+en,sefirot,48.46,מושג בקבלה,,https://kabbalahmedia.info/sources/OqZMFGHu,et_sources|OqZMFGHu|,Unknown,-1
+en,sefirot,48.46,מושג בקבלה,,https://kabbalahmedia.info/lessons?source=bs_L2jMWyce_OqZMFGHu,et_lessons||source - bs_L2jMWyce_OqZMFGHu,Unknown,-1
+en,sefirot,48.46,מושג בקבלה,,https://kabbalahmedia.info/sources/xtKmrbb9,et_sources|xtKmrbb9|,Regular,9
+en,sefirot,48.46,מושג בקבלה,,https://kabbalahmedia.info/lessons?source=bs_xtKmrbb9,et_lessons||source - bs_xtKmrbb9,Unknown,-1
+en,sefirot,48.46,מושג בקבלה,,https://kabbalahmedia.info/sources/kB3eD83I,et_sources|kB3eD83I|,Unknown,-1
+en,olam,242.30,מושג בקבלה,"Need to add meaningful title to the parts of TES, so that instead of ""Study of the Ten Sefirot > Vol. 2 > Part 6 | The Ten Sefirot of Olam ha Nekudim""",http://www.kabbalah.info/eng/content/view/full/87475,et_bad_structure||,BadStructure,-1
+en,Perception of reality,48.46,מושג בקבלה,,http://www.kabbalah.info/eng/content/view/full/85255,et_bad_structure||,BadStructure,-1
+en,Perception of reality,48.46,מושג בקבלה,,http://www.kabbalah.info/engkab/daily-kabbalah-lesson/perception-of-reality,et_bad_structure||,BadStructure,-1
+en,Perception of reality,48.46,מושג בקבלה,,https://kabbalahmedia.info/lessons?topic=0db5BBS3_fF9Awl9y_VmPWCNvo,et_lessons||topic - 0db5BBS3_fF9Awl9y_VmPWCNvo,Good,1
+en,Perception of reality,48.46,מושג בקבלה,,https://kabbalahmedia.info/programs?topic=0db5BBS3_fF9Awl9y_VmPWCNvo,et_programs||topic - 0db5BBS3_fF9Awl9y_VmPWCNvo,Good,2
+en,Perception of reality,48.46,מושג בקבלה,,http://www.kabbalah.info/eng/content/view/full/80131,et_bad_structure||,BadStructure,-1
+en,music,79.60,מוזיקה,,http://www.kabbalah.info/engkab/kabbalah-music/melodies-of-baal-hasulam,et_bad_structure||,BadStructure,-1
+en,music,79.60,מוזיקה,,http://www.kabbalah.info/engkab/mmedia.htm,et_bad_structure||,BadStructure,-1
+en,music,79.60,מוזיקה,,https://kabbalahmedia.info/lessons?topic=VUpFlBnu_jwqdSTx0_Xq4Ixfow,et_lessons||topic - VUpFlBnu_jwqdSTx0_Xq4Ixfow,Good,1
+en,music,79.60,מוזיקה,,https://kabbalahmedia.info/programs?topic=VUpFlBnu_jwqdSTx0_Xq4Ixfow,et_programs||topic - VUpFlBnu_jwqdSTx0_Xq4Ixfow,Good,2
+en,music,79.60,מוזיקה,,http://www.kabbalah.info/engkab/kabbalah-music/music-inspired-by-kabbalah,et_bad_structure||,BadStructure,-1
+en,webinar,105.85,שיעור קבלה כללי,"After first result of all webinars, it should be chronological ordering of all webinars from most recent to oldest. Also, webinars should include main topic/keyword/title",https://kabbalahmedia.info/lessons/virtual/c/VwCQ0OBq,et_collections|VwCQ0OBq|,Good,2
+en,webinar,105.85,שיעור קבלה כללי,"After first result of all webinars, it should be chronological ordering of all webinars from most recent to oldest. Also, webinars should include main topic/keyword/title",https://kabbalahmedia.info/lessons/virtual,et_landing_page|lessons/virtual|,Good,1
+en,virtual lesson,42.34,שיעור קבלה כללי,Each of the results needs chronological arrangement from most recent to oldest / and after 4 results to do the same with all virtual lessons,https://kabbalahmedia.info/lessons/virtual/c/DEopTtgq,et_collections|DEopTtgq|,Unknown,-1
+en,virtual lesson,42.34,שיעור קבלה כללי,Each of the results needs chronological arrangement from most recent to oldest / and after 4 results to do the same with all virtual lessons,https://kabbalahmedia.info/lessons/virtual/c/J8fUahQ6,et_collections|J8fUahQ6|,Unknown,-1
+en,virtual lesson,42.34,שיעור קבלה כללי,Each of the results needs chronological arrangement from most recent to oldest / and after 4 results to do the same with all virtual lessons,https://kabbalahmedia.info/lessons/virtual/c/WAIAsb7a,et_collections|WAIAsb7a|,Unknown,-1
+en,virtual lesson,42.34,שיעור קבלה כללי,Each of the results needs chronological arrangement from most recent to oldest / and after 4 results to do the same with all virtual lessons,https://kabbalahmedia.info/lessons/virtual/c/90UmZsxO,et_collections|90UmZsxO|,Unknown,-1
+en,virtual lesson,42.34,שיעור קבלה כללי,Each of the results needs chronological arrangement from most recent to oldest / and after 4 results to do the same with all virtual lessons,https://kabbalahmedia.info/lessons/virtual,et_landing_page|lessons/virtual|,Good,1
+en,Webinar,105.85,שיעור קבלה כללי,"After first result of all webinars, it should be chronological ordering of all webinars from most recent to oldest. Also, webinars should include main topic/keyword/title",https://kabbalahmedia.info/lessons/virtual/c/VwCQ0OBq,et_collections|VwCQ0OBq|,Good,2
+en,Webinar,105.85,שיעור קבלה כללי,"After first result of all webinars, it should be chronological ordering of all webinars from most recent to oldest. Also, webinars should include main topic/keyword/title",https://kabbalahmedia.info/lessons/virtual,et_landing_page|lessons/virtual|,Good,1
+en,lesson,23.00,שיעור בוקר,Chronological order of daily lessons from most recent to oldest,https://kabbalahmedia.info/lessons,et_landing_page|lessons|,Good,1
+en,integral-education_opening-doors,275.00,נושא חינוך אינטגראלי,,https://kabbalahmedia.info/en/programs/cu/nh24Cn1H?language=en,et_content_units|nh24Cn1H|,Unknown,-1
+en,integral education,275.00,נושא חינוך אינטגראלי,,https://kabbalahmedia.info/programs?topic=VUpFlBnu_jwqdSTx0_qMxM8ZsC,et_programs||topic - VUpFlBnu_jwqdSTx0_qMxM8ZsC,Good,1
+en,children,55.00,נושא חינוך אינטגראלי,,https://kabbalahmedia.info/programs/c/RJoMFefA,et_collections|RJoMFefA|,Good,1
+en,children,55.00,נושא חינוך אינטגראלי,,https://kabbalahmedia.info/lessons/cu/wwZeRZLV,et_content_units|wwZeRZLV|,Unknown,-1
+en,children,55.00,נושא חינוך אינטגראלי,,https://kabbalahmedia.info/programs/cu/2HNj4LIf,et_content_units|2HNj4LIf|,Unknown,-1
+en,children,55.00,נושא חינוך אינטגראלי,,https://kabbalahmedia.info/lessons/cu/Kn6fSnxM,et_content_units|Kn6fSnxM|,Unknown,-1
+en,children,55.00,נושא חינוך אינטגראלי,,https://kabbalahmedia.info/lessons/cu/G2aqRAbS,et_content_units|G2aqRAbS|,Unknown,-1
+en,tora,37.00,תנך,Chronological order from most recent to oldest within each result,http://www.kabbalahblog.info/category/torah-portion/,et_bad_structure||,BadStructure,-1
+en,tora,37.00,תנך,Chronological order from most recent to oldest within each result,https://kabbalahmedia.info/programs/c/FMekSMpp,et_collections|FMekSMpp|,Regular,4
+en,tora,37.00,תנך,Chronological order from most recent to oldest within each result,https://kabbalahmedia.info/programs?source=mr_bvA8ZB1w,et_programs||source - mr_bvA8ZB1w,Unknown,-1
+en,tora,37.00,תנך,Chronological order from most recent to oldest within each result,https://kabbalahmedia.info/programs/c/X6NjpGB0,et_collections|X6NjpGB0|,Unknown,-1
+en,tora,37.00,תנך,Chronological order from most recent to oldest within each result,https://kabbalahmedia.info/en/sources/mmnCkYgm,et_sources|mmnCkYgm|,Unknown,-1
+en,torah,46.25,תנך,Chronological order from most recent to oldest within each result,http://www.kabbalahblog.info/category/torah-portion/,et_bad_structure||,BadStructure,-1
+en,torah,46.25,תנך,Chronological order from most recent to oldest within each result,https://kabbalahmedia.info/programs/c/FMekSMpp,et_collections|FMekSMpp|,Regular,4
+en,torah,46.25,תנך,Chronological order from most recent to oldest within each result,https://kabbalahmedia.info/programs?source=mr_bvA8ZB1w,et_programs||source - mr_bvA8ZB1w,Good,2
+en,torah,46.25,תנך,Chronological order from most recent to oldest within each result,https://kabbalahmedia.info/programs/c/X6NjpGB0,et_collections|X6NjpGB0|,Regular,5
+en,parashat,46.25,תנך,Chronological order from most recent to oldest within each result,http://www.kabbalahblog.info/category/torah-portion/,et_bad_structure||,BadStructure,-1
+en,parashat,46.25,תנך,Chronological order from most recent to oldest within each result,https://kabbalahmedia.info/programs/c/FMekSMpp,et_collections|FMekSMpp|,Unknown,-1
+en,parashat,46.25,תנך,Chronological order from most recent to oldest within each result,https://kabbalahmedia.info/programs?source=mr_bvA8ZB1w,et_programs||source - mr_bvA8ZB1w,Unknown,-1
+en,parashat,46.25,תנך,Chronological order from most recent to oldest within each result,https://kabbalahmedia.info/programs/c/X6NjpGB0,et_collections|X6NjpGB0|,Unknown,-1
+en,tes,135.30,"תע""ס",,https://kabbalahmedia.info/sources/xtKmrbb9,et_sources|xtKmrbb9|,Unknown,-1
+en,tes,135.30,"תע""ס",,https://kabbalahmedia.info/lessons?source=bs_xtKmrbb9,et_lessons||source - bs_xtKmrbb9,Unknown,-1
+en,tes,135.30,"תע""ס",,https://kabbalahmedia.info/sources/OqZMFGHu,et_sources|OqZMFGHu|,Unknown,-1
+en,tes,135.30,"תע""ס",,https://kabbalahmedia.info/lessons?source=bs_L2jMWyce_OqZMFGHu,et_lessons||source - bs_L2jMWyce_OqZMFGHu,Unknown,-1
+en,tes,135.30,"תע""ס",,https://kabbalahmedia.info/lessons?source=bs_xtKmrbb9_e2jgBKLL,et_lessons||source - bs_xtKmrbb9_e2jgBKLL,Unknown,-1
+en,talmud eser sefirot,135.30,"תע""ס",,https://kabbalahmedia.info/sources/xtKmrbb9,et_sources|xtKmrbb9|,Unknown,-1
+en,talmud eser sefirot,135.30,"תע""ס",,https://kabbalahmedia.info/lessons?source=bs_xtKmrbb9,et_lessons||source - bs_xtKmrbb9,Unknown,-1
+en,talmud eser sefirot,135.30,"תע""ס",,https://kabbalahmedia.info/sources/OqZMFGHu,et_sources|OqZMFGHu|,Unknown,-1
+en,talmud eser sefirot,135.30,"תע""ס",,https://kabbalahmedia.info/lessons?source=bs_L2jMWyce_OqZMFGHu,et_lessons||source - bs_L2jMWyce_OqZMFGHu,Unknown,-1
+en,talmud eser sefirot,135.30,"תע""ס",,https://kabbalahmedia.info/lessons?source=bs_xtKmrbb9_e2jgBKLL,et_lessons||source - bs_xtKmrbb9_e2jgBKLL,Unknown,-1
+en,zohar,394.50,זוהר,"1st result: links to text of Zohar. 2nd result onward, chronological listing of Zohar lessons from most recent to oldest.",http://www.kabbalah.info/engkab/the-zohar/study-the-zohar,et_bad_structure||,BadStructure,-1
+en,zohar,394.50,זוהר,"1st result: links to text of Zohar. 2nd result onward, chronological listing of Zohar lessons from most recent to oldest.",https://kabbalahmedia.info/en/sources/yUcfylRm,et_sources|yUcfylRm|,Unknown,-1
+en,zohar,394.50,זוהר,"1st result: links to text of Zohar. 2nd result onward, chronological listing of Zohar lessons from most recent to oldest.",https://kabbalahmedia.info/en/programs?topic=0db5BBS3_fF9Awl9y_m3u0BC6T,et_programs||topic - 0db5BBS3_fF9Awl9y_m3u0BC6T,Unknown,-1
+en,zohar,394.50,זוהר,"1st result: links to text of Zohar. 2nd result onward, chronological listing of Zohar lessons from most recent to oldest.",https://kabbalahmedia.info/en/lessons?source=rh_AwGBQX2L,et_lessons||source - rh_AwGBQX2L,Unknown,-1
+en,zohar for everyone,394.50,זוהר,"1st result: links to text of Zohar. 2nd result onward, chronological listing of Zohar lessons from most recent to oldest.",http://www.kabbalah.info/engkab/the-zohar/study-the-zohar,et_bad_structure||,BadStructure,-1
+en,zohar for everyone,394.50,זוהר,"1st result: links to text of Zohar. 2nd result onward, chronological listing of Zohar lessons from most recent to oldest.",https://kabbalahmedia.info/en/sources/yUcfylRm,et_sources|yUcfylRm|,Unknown,-1
+en,zohar for everyone,394.50,זוהר,"1st result: links to text of Zohar. 2nd result onward, chronological listing of Zohar lessons from most recent to oldest.",https://kabbalahmedia.info/en/programs?topic=0db5BBS3_fF9Awl9y_m3u0BC6T,et_programs||topic - 0db5BBS3_fF9Awl9y_m3u0BC6T,Unknown,-1
+en,zohar for everyone,394.50,זוהר,"1st result: links to text of Zohar. 2nd result onward, chronological listing of Zohar lessons from most recent to oldest.",https://kabbalahmedia.info/en/lessons?source=rh_AwGBQX2L,et_lessons||source - rh_AwGBQX2L,Unknown,-1
+en,congress,1491.50,כנס,1st result: current congress landing page link. 2nd result onward: chronological listing of complete congress lesson and song packages in chronological order from most recent to oldest.,https://kabbalahmedia.info/en/events,et_landing_page|events|,Good,1
+en,arava,745.75,כנס,Chronological listing of complete Arava congress lesson and song packages in chronological order from most recent to oldest.,https://kabbalahmedia.info/en/events/c/uxQtAVZy,et_collections|uxQtAVZy|,Good,1
+en,arava,745.75,כנס,Chronological listing of complete Arava congress lesson and song packages in chronological order from most recent to oldest.,https://kabbalahmedia.info/en/events?location=Israel%7CArava,et_landing_page|events|location - Israel%7CArava,Unknown,-1
+en,kosinec,8.10,מרצה-חבר,"(1) ""Kabbalah Revealed"" - https://kabbalahmedia.info/programs/c/946KH4AF - should be organized according to lesson numbers, not according to date. Also, there are some title changes needed in the series (fixing of spelling and grammar errors). (2) The 5 songs that are currently the first results here need to be re-categorized from ""Lesson Part"" to ""Music."" Also, each of the songs don't work - needs fixing. Also, they should be grouped in a new section called ""Tony Kosinec - Songs."" ",https://kabbalahmedia.info/programs/c/946KH4AF,et_collections|946KH4AF|,Unknown,-1
+en,kosinec,8.10,מרצה-חבר,"(1) ""Kabbalah Revealed"" - https://kabbalahmedia.info/programs/c/946KH4AF - should be organized according to lesson numbers, not according to date. Also, there are some title changes needed in the series (fixing of spelling and grammar errors). (2) The 5 songs that are currently the first results here need to be re-categorized from ""Lesson Part"" to ""Music."" Also, each of the songs don't work - needs fixing. Also, they should be grouped in a new section called ""Tony Kosinec - Songs."" ",https://kabbalahmedia.info/lessons/cu/voo2mKrE,et_content_units|voo2mKrE|,Regular,9
+en,kosinec,8.10,מרצה-חבר,"(1) ""Kabbalah Revealed"" - https://kabbalahmedia.info/programs/c/946KH4AF - should be organized according to lesson numbers, not according to date. Also, there are some title changes needed in the series (fixing of spelling and grammar errors). (2) The 5 songs that are currently the first results here need to be re-categorized from ""Lesson Part"" to ""Music."" Also, each of the songs don't work - needs fixing. Also, they should be grouped in a new section called ""Tony Kosinec - Songs."" ",Tony Kosinec - Songs,et_bad_structure||,BadStructure,-1
+en,oren levi,8.10,מרצה-חבר,"Need to remove all search results that find only ""levi"" detached from ""oren levi"" - confuses the results.",https://kabbalahmedia.info/programs/c/zf4lLwyI,et_collections|zf4lLwyI|,Unknown,-1
+en,oren levi,8.10,מרצה-חבר,"Need to remove all search results that find only ""levi"" detached from ""oren levi"" - confuses the results.",https://kabbalahmedia.info/programs/c/G30TMsPn,et_collections|G30TMsPn|,Unknown,-1
+en,oren levi,8.10,מרצה-חבר,"Need to remove all search results that find only ""levi"" detached from ""oren levi"" - confuses the results.","Need to remove all search results that find only ""levi"" detached from ""oren levi"" - confuses the results.",et_bad_structure||,BadStructure,-1
+en,oren,8.10,מרצה-חבר,"Need to remove all search results that find only ""levi"" detached from ""oren levi"" - confuses the results.",https://kabbalahmedia.info/programs/c/zf4lLwyI,et_collections|zf4lLwyI|,Unknown,-1
+en,oren,8.10,מרצה-חבר,"Need to remove all search results that find only ""levi"" detached from ""oren levi"" - confuses the results.",https://kabbalahmedia.info/programs/c/G30TMsPn,et_collections|G30TMsPn|,Unknown,-1
+en,oren,8.10,מרצה-חבר,"Need to remove all search results that find only ""levi"" detached from ""oren levi"" - confuses the results.","Need to remove all search results that find only ""levi"" detached from ""oren levi"" - confuses the results.",et_bad_structure||,BadStructure,-1
+en,tree of life,53.17,ספר קבלה,,https://kabbalahmedia.info/sources/HujVytxA,et_sources|HujVytxA|,Good,2
+en,tree of life,53.17,ספר קבלה,,https://kabbalahmedia.info/lessons?source=ar_HujVytxA,et_lessons||source - ar_HujVytxA,Good,1
+en,tree of life,53.17,ספר קבלה,,https://kabbalahmedia.info/sources/2DgydMsJ,et_sources|2DgydMsJ|,Regular,5
+en,tree of life,53.17,ספר קבלה,,https://kabbalahmedia.info/sources/qO7BHtX2,et_sources|qO7BHtX2|,Unknown,-1
+en,intentions from the heart,212.70,ספר קבלה,"People are searching for the audio book, ""Intentions from the Heart"" - which I placed as first result. The other 2 results are simply material on the topic, ""intention.""",http://www.kabbalah.info/engkab/education-center/kabbalah-audio-books#intentions-from-the-heart,et_bad_structure||,BadStructure,-1
+en,attaining the worlds beyond,42.54,ספר קבלה,"People are searching for the book, ""Attaining the Worlds Beyond."" 1st result - eBook (PDF if possible). 2nd result - audio book. After that, material related to the book (3 - promo clip, 4 - lessons etc.). Since there is organizational goal to sell books, then there should be integration of bookstore into kabbalahmedia.info, either as ad-like search results (similar to Google Ads appearing first in Google search results), which links to external site selling the books, or as side banner with photo of book being searched, and options to directly buy (1) the physical copy of the book, (2) eBook, (3) audio book. ",http://www.kabbalah.info/eng/content/view/full/4175,et_bad_structure||,BadStructure,-1
+en,attaining the worlds beyond,42.54,ספר קבלה,"People are searching for the book, ""Attaining the Worlds Beyond."" 1st result - eBook (PDF if possible). 2nd result - audio book. After that, material related to the book (3 - promo clip, 4 - lessons etc.). Since there is organizational goal to sell books, then there should be integration of bookstore into kabbalahmedia.info, either as ad-like search results (similar to Google Ads appearing first in Google search results), which links to external site selling the books, or as side banner with photo of book being searched, and options to directly buy (1) the physical copy of the book, (2) eBook, (3) audio book. ",http://www.kabbalah.info/engkab/education-center/kabbalah-audio-books#attaining-the-worlds-beyond,et_bad_structure||,BadStructure,-1
+en,attaining the worlds beyond,42.54,ספר קבלה,"People are searching for the book, ""Attaining the Worlds Beyond."" 1st result - eBook (PDF if possible). 2nd result - audio book. After that, material related to the book (3 - promo clip, 4 - lessons etc.). Since there is organizational goal to sell books, then there should be integration of bookstore into kabbalahmedia.info, either as ad-like search results (similar to Google Ads appearing first in Google search results), which links to external site selling the books, or as side banner with photo of book being searched, and options to directly buy (1) the physical copy of the book, (2) eBook, (3) audio book. ",http://www.kabbalah.info/engkab/kabbalah-video-clips/attaining-the-worlds-beyond,et_bad_structure||,BadStructure,-1
+en,attaining the worlds beyond,42.54,ספר קבלה,"People are searching for the book, ""Attaining the Worlds Beyond."" 1st result - eBook (PDF if possible). 2nd result - audio book. After that, material related to the book (3 - promo clip, 4 - lessons etc.). Since there is organizational goal to sell books, then there should be integration of bookstore into kabbalahmedia.info, either as ad-like search results (similar to Google Ads appearing first in Google search results), which links to external site selling the books, or as side banner with photo of book being searched, and options to directly buy (1) the physical copy of the book, (2) eBook, (3) audio book. ",https://kabbalahmedia.info/lessons/cu/N9osSuKU,et_content_units|N9osSuKU|,Good,3
+en,attaining the worlds beyond,42.54,ספר קבלה,"People are searching for the book, ""Attaining the Worlds Beyond."" 1st result - eBook (PDF if possible). 2nd result - audio book. After that, material related to the book (3 - promo clip, 4 - lessons etc.). Since there is organizational goal to sell books, then there should be integration of bookstore into kabbalahmedia.info, either as ad-like search results (similar to Google Ads appearing first in Google search results), which links to external site selling the books, or as side banner with photo of book being searched, and options to directly buy (1) the physical copy of the book, (2) eBook, (3) audio book. ",https://kabbalahmedia.info/lessons/cu/Quu1kPDa,et_content_units|Quu1kPDa|,Good,2
+en,Children,12.00,תכניות ילדים,,-,et_bad_structure||,BadStructure,-1
+en,marshmelo,12.00,תכניות ילדים,,-,et_bad_structure||,BadStructure,-1
+en,aguda-ahat,114.00,תכנית טלוויזיה,,https://kabbalahmedia.info/en/programs/c/QEFwTp2Q,et_collections|QEFwTp2Q|,Unknown,-1
+en,the meeting of worlds,114.00,תכנית טלוויזיה,,https://kabbalahmedia.info/en/programs/c/FOOoTpLR,et_collections|FOOoTpLR|,Good,1
+en,meeting of the worlds,114.00,תכנית טלוויזיה,,https://kabbalahmedia.info/en/programs/c/FOOoTpLR,et_collections|FOOoTpLR|,Good,1
+en,igeret,5.00,אגרות,,https://kabbalahmedia.info/en/sources/9ZIJ9CkI,et_sources|9ZIJ9CkI|,Unknown,-1
+en,igeret,5.00,אגרות,,https://kabbalahmedia.info/en/sources/VUcyhrcS,et_sources|VUcyhrcS|,Unknown,-1
+en,igrot,5.00,אגרות,,https://kabbalahmedia.info/en/sources/9ZIJ9CkI,et_sources|9ZIJ9CkI|,Unknown,-1
+en,igrot,5.00,אגרות,,https://kabbalahmedia.info/en/sources/VUcyhrcS,et_sources|VUcyhrcS|,Unknown,-1
+en,Letter 8,2.50,אגרות,,https://kabbalahmedia.info/en/sources/xu2KGyCi,et_sources|xu2KGyCi|,Good,2
+en,Letter 8,2.50,אגרות,,https://kabbalahmedia.info/en/sources/J0AhqRzu,et_sources|J0AhqRzu|,Regular,4
+en,Letter 8,2.50,אגרות,,https://kabbalahmedia.info/en/lessons?source=rb_b8SHlrfH_xu2KGyCi,et_lessons||source - rb_b8SHlrfH_xu2KGyCi,Good,1
+en,Letter 8,2.50,אגרות,,https://kabbalahmedia.info/en/lessons?source=bs_DVSS0xAR_J0AhqRzu,et_lessons||source - bs_DVSS0xAR_J0AhqRzu,Good,3
+en,pticha,107.20,מאמר בקבלה,,https://kabbalahmedia.info/en/sources/kB3eD83I,et_sources|kB3eD83I|,Unknown,-1
+en,pticha,107.20,מאמר בקבלה,,https://kabbalahmedia.info/en/lessons?source=bs_L2jMWyce_kB3eD83I,et_lessons||source - bs_L2jMWyce_kB3eD83I,Unknown,-1
+en,pticha,107.20,מאמר בקבלה,,https://kabbalahmedia.info/en/lessons/series/c/XZoflItG,et_collections|XZoflItG|,Unknown,-1
+en,pticha,107.20,מאמר בקבלה,,https://kabbalahmedia.info/en/lessons/series/c/Y4ybN1qM,et_collections|Y4ybN1qM|,Unknown,-1
+en,pticha,107.20,מאמר בקבלה,,https://kabbalahmedia.info/en/lessons/series/c/yoLixtE4,et_collections|yoLixtE4|,Unknown,-1
+en,prefacio,178.67,מאמר בקבלה,,https://kabbalahmedia.info/en/sources/kB3eD83I,et_sources|kB3eD83I|,Regular,6
+en,prefacio,178.67,מאמר בקבלה,,https://kabbalahmedia.info/en/lessons?source=bs_L2jMWyce_kB3eD83I,et_lessons||source - bs_L2jMWyce_kB3eD83I,Regular,4
+en,prefacio,178.67,מאמר בקבלה,,https://kabbalahmedia.info/en/lessons/series,et_landing_page|lessons/series|,Unknown,-1
+en,preface to the wisdom of kabbalah,178.67,מאמר בקבלה,,https://kabbalahmedia.info/en/sources/kB3eD83I,et_sources|kB3eD83I|,Regular,6
+en,preface to the wisdom of kabbalah,178.67,מאמר בקבלה,,https://kabbalahmedia.info/en/lessons?source=bs_L2jMWyce_kB3eD83I,et_lessons||source - bs_L2jMWyce_kB3eD83I,Good,1
+en,preface to the wisdom of kabbalah,178.67,מאמר בקבלה,,https://kabbalahmedia.info/en/lessons/series,et_landing_page|lessons/series|,Unknown,-1
+en,rabash,131.75,מקובל,,https://kabbalahmedia.info/sources/b8SHlrfH,et_sources|b8SHlrfH|,Regular,6
+en,rabash,131.75,מקובל,,https://kabbalahmedia.info/sources/rQ6sIUZK,et_sources|rQ6sIUZK|,Regular,7
+en,baal hasulam,87.83,מקובל,,https://kabbalahmedia.info/en/sources/qMeV5M3Y,et_sources|qMeV5M3Y|,Regular,7
+en,baal hasulam,87.83,מקובל,,https://kabbalahmedia.info/he/persons/baal-hasulam,et_bad_structure||,BadStructure,-1
+en,baal hasulam,87.83,מקובל,,https://kabbalahmedia.info/en/lessons?source=bs,et_lessons||source - bs,Unknown,-1
+en,Mismah Arosa,7.00,מאמר הפצה,,http://www.kabbalah.info/files/public/Files/pdf/michael-laitman_arosa-speech.pdf,et_bad_structure||,BadStructure,-1
+en,arosa,8.00,הפצה,,http://www.kabbalah.info/files/public/Files/pdf/michael-laitman_arosa-speech.pdf,et_bad_structure||,BadStructure,-1
+en,new life,1970.50,חיים חדשים,,https://kabbalahmedia.info/programs/c/zf4lLwyI,et_collections|zf4lLwyI|,Good,1
+en,nueva vida,1970.50,חיים חדשים,,https://kabbalahmedia.info/programs/c/zf4lLwyI,et_collections|zf4lLwyI|,Unknown,-1
+en,new life pregnancy,59.30,חיים חדשים + נושא,,https://kabbalahmedia.info/en/programs/c/zf4lLwyI?topic=VUpFlBnu_pXpozaXB_3cI4UcAW,et_collections|zf4lLwyI|,Unknown,-1
+en,new life marriage,59.30,חיים חדשים + נושא,,https://kabbalahmedia.info/en/programs/c/zf4lLwyI?topic=VUpFlBnu_pXpozaXB_BdfLfqsa,et_collections|zf4lLwyI|,Unknown,-1
+en,relationship,59.30,חיים חדשים + נושא,,https://kabbalahmedia.info/en/programs?topic=VUpFlBnu_pXpozaXB_BdfLfqsa,et_programs||topic - VUpFlBnu_pXpozaXB_BdfLfqsa,Good,1
+en,seuda,61.00,סעודות,,https://kabbalahmedia.info/en/events/meals,et_landing_page|events/meals|,Good,1
+en,meal,61.00,סעודות,,https://kabbalahmedia.info/en/events/meals,et_landing_page|events/meals|,Good,1
+en,yeshivat haverim,97.00,ישיבת חברים,,https://kabbalahmedia.info/en/events/friends-gatherings,et_landing_page|events/friends-gatherings|,Good,1
+en,yeshivat,97.00,ישיבת חברים,,https://kabbalahmedia.info/en/events/friends-gatherings,et_landing_page|events/friends-gatherings|,Good,1

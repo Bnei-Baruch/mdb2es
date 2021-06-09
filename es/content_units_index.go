@@ -14,6 +14,7 @@ import (
 	"gopkg.in/olivere/elastic.v6"
 
 	"github.com/Bnei-Baruch/archive-backend/consts"
+	"github.com/Bnei-Baruch/archive-backend/integration"
 	"github.com/Bnei-Baruch/archive-backend/mdb"
 	mdbmodels "github.com/Bnei-Baruch/archive-backend/mdb/models"
 	"github.com/Bnei-Baruch/archive-backend/utils"
@@ -27,12 +28,14 @@ func MakeContentUnitsIndex(namespace string, indexDate string, db *sql.DB, esc *
 	cui.indexDate = indexDate
 	cui.db = db
 	cui.esc = esc
+	cui.assetsService = integration.NewAssetsService(unzipUrl)
 	return cui
 }
 
 type ContentUnitsIndex struct {
 	BaseIndex
 	Progress uint64
+	assetsService integration.AssetsService
 }
 
 func defaultContentUnit(cu *mdbmodels.ContentUnit) bool {
@@ -343,7 +346,7 @@ func (index *ContentUnitsIndex) prepareIndexUnit(cu *mdbmodels.ContentUnit, inde
 			if byLang, ok := indexData.Transcripts[cu.UID]; ok {
 				if val, ok := byLang[i18n.Language]; ok {
 					var err error
-					unit.Content, err = DocText(val[0])
+					unit.Content, err = index.assetsService.Doc2Text(val[0])
 					if unit.Content == "" {
 						log.Warnf("Content Units Index - Transcript empty: %s", val[0])
 					}

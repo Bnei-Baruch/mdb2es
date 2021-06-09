@@ -71,12 +71,12 @@ func InitWithDefault(defaultDb *sql.DB) time.Time {
 		log.Infof("Elasticsearch version %s", esversion)
 	}
 
-	es.InitVars()
+	es.InitEnv()
 
 	TOKENS_CACHE = search.MakeTokensCache(consts.TOKEN_CACHE_SIZE)
 
-	// Moving to Grammars V2 that are iindexed and searched.
-	VARIABLES, err = search.MakeVariablesV2(viper.GetString("elasticsearch.variables"))
+	// Moving to Grammars V2 that are indexed and searched.
+	VARIABLES, err = search.MakeVariablesV2(es.DataFolder("search", "variables"))
 	//utils.Must(err)
 	//GRAMMARS, err = search.MakeGrammars(viper.GetString("elasticsearch.grammars"), esc, TOKENS_CACHE, VARIABLES)
 	//utils.Must(err)

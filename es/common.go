@@ -6,11 +6,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"html"
+	"io/ioutil"
 	"os"
-	"runtime"
+	"path/filepath"
 	"strings"
 
 	"github.com/Bnei-Baruch/sqlboiler/queries/qm"
+	log "github.com/Sirupsen/logrus"
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
 	"gopkg.in/olivere/elastic.v6"
@@ -21,65 +23,37 @@ import (
 )
 
 var (
-	unzipUrl string
-	// Required for sources.
-	sourcesFolder string
-	pythonPath    string
-	parseDocsBin  string
-	// prepare_docs
+	dataFolder             string
+	sourcesFolder          string
+	unzipUrl               string
 	prepareDocsBatchSize   int
 	prepareDocsParallelism int
-	// Synonyms.
-	synonymsFolder string
 )
 
-func SynonymsFolder() (string, error) {
-	return InitConfigFolder("elasticsearch.synonyms-folder", &synonymsFolder)
-}
+func ensureFolder(configKey string) (string, error) {
+	path := viper.GetString(fmt.Sprintf("elasticsearch.%s", configKey))
 
-func SourcesFolder() (string, error) {
-	return InitConfigFolder("elasticsearch.sources-folder", &sourcesFolder)
-}
-
-func InitConfigFolder(configKey string, value *string) (string, error) {
-	if *value != "" {
-		return *value, nil
-	}
-
-	path := viper.GetString(configKey)
-	if path == "" {
-		path = "/tmp/"
-	}
 	if _, err := os.Stat(path); err != nil {
 		if os.IsNotExist(err) {
-			err := os.MkdirAll(path, 0777)
-			if err != nil {
-				*value = path
-			}
-			return path, err
-		} else {
-			return path, err
+			log.Errorf("Folder %s doesn't exists at path %s", configKey, path)
+			return ioutil.TempDir("", configKey)
 		}
+
+		return "", err
 	}
-	*value = path
-	return *value, nil
+
+	return path, nil
 }
 
-func IsWindows() bool {
-	return runtime.GOOS == "windows"
-}
+func InitEnv() {
+	var err error
+	if dataFolder, err = ensureFolder("data-folder"); err != nil {
+		panic(err)
+	}
+	if sourcesFolder, err = ensureFolder("sources-folder"); err != nil {
+		panic(err)
+	}
 
-func InitVars() {
-	if IsWindows() {
-		pythonPath = viper.GetString("elasticsearch.python-path")
-		if pythonPath == "" {
-			panic("python path should be set in config.")
-		}
-	}
-	parseDocsBin = viper.GetString("elasticsearch.parse-docs-bin")
-	if parseDocsBin == "" {
-		panic("parse_docs.py binary should be set in config.")
-	}
 	unzipUrl = viper.GetString("elasticsearch.unzip-url")
 	if unzipUrl == "" {
 		panic("unzip url should be set in config.")
@@ -87,6 +61,23 @@ func InitVars() {
 
 	prepareDocsBatchSize = utils.MinInt(viper.GetInt("elasticsearch.prepare-docs-batch-size"), 50)
 	prepareDocsParallelism = utils.MaxInt(1, viper.GetInt("elasticsearch.prepare-docs-parallelism"))
+}
+
+func DataFolder(path ...string) string {
+	return filepath.Join(dataFolder, filepath.Join(path...))
+}
+
+func SourcesFolder() string {
+	return sourcesFolder
+}
+
+func ReadDataFile(filename string, path ...string) ([]byte, error) {
+	fPath := filepath.Join(DataFolder(path...), filename)
+	data, err := ioutil.ReadFile(fPath)
+	if err != nil {
+		return nil, errors.Wrapf(err, "ioutil.ReadFile %s", fPath)
+	}
+	return data, nil
 }
 
 func KeyValue(t string, uid string) string {

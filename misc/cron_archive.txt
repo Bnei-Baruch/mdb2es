@@ -1,0 +1,10 @@
+# Archive site backend cron tasks
+
+# Sanity check that search works properly.
+0 * * * * archive /sites/archive-backend/search_sanity.sh
+
+# Daily eval of prod
+0 0 * * * archive /sites/archive-backend/search_eval.sh
+
+# sync wordpress cms to disk
+*/10 * * * * archive /sites/archive-backend/archive cms > ~/archive_cms_sync.log 2>&1 || mail -s "Errors archive_cms_sync" edoshor@gmail.com < ~/archive_cms_sync.log

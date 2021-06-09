@@ -14,8 +14,8 @@
 #   and put under: elasticsearch-6.X.X/config/hunspell/he_IL
 #   Additional dictionary terms are managed in .delta.dic files located in search/hunspell directory of the repo.
 #   Copy these files into corresponding folders inside elasticsearch-6.X.X/config/hunspell/
-#   For Hebrew dictionary files, the supported format is ISO 8859-8. 
-#   
+#   For Hebrew dictionary files, the supported format is ISO 8859-8.
+#
 #
 # Deprecated plugins (already not in use):
 # Hebrew analyzer plugin:
@@ -80,7 +80,7 @@ LANG_GROUPS = {
 }
 
 # Units indexing
-LanguageAnalyzer = {
+LANGUAGE_ANALYZER = {
     ENGLISH: "english_synonym",
     HEBREW: "hebrew_synonym",
     RUSSIAN: "russian_synonym",
@@ -122,7 +122,7 @@ LanguageAnalyzer = {
     AMHARIC: "standard",
 }
 
-LanguageAnalyzerWithoutSynonyms  = {
+LANGUAGE_ANALYZER_WITHOUT_SYNONYMS = {
     ENGLISH: "english",
     HEBREW: "he",
     RUSSIAN: "russian",
@@ -157,16 +157,16 @@ LanguageAnalyzerWithoutSynonyms  = {
     AMHARIC: "standard",
 }
 
-SynonymGraphFilterImp = {
+SYNONYM_GRAPH_FILTER_IMP = {
     "type": "synonym_graph",
     "tokenizer": "keyword",
-            "synonyms": [],
+    "synonyms": [],
 }
 
-LanguageAnalyzerImp = {
+LANGUAGE_ANALYZER_IMP = {
     ENGLISH: {
         "english_synonym": {
-            "tokenizer":  "standard",
+            "tokenizer": "standard",
             "filter": [
                 "english_possessive_stemmer",
                 "lowercase",
@@ -192,18 +192,18 @@ LanguageAnalyzerImp = {
             ]
         },
         "he": {
-          "tokenizer": "standard",
-          "filter": [
-            "he_IL"
-          ],
-          "char_filter": [
-            "quotes"
-          ]
+            "tokenizer": "standard",
+            "filter": [
+                "he_IL"
+            ],
+            "char_filter": [
+                "quotes"
+            ]
         }
     },
     RUSSIAN: {
         "russian_synonym": {
-            "tokenizer":  "standard",
+            "tokenizer": "standard",
             "filter": [
                 "lowercase",
                 "russian_stop",
@@ -214,7 +214,7 @@ LanguageAnalyzerImp = {
     },
     SPANISH: {
         "spanish_synonym": {
-            "tokenizer":  "standard",
+            "tokenizer": "standard",
             "filter": [
                 "lowercase",
                 "spanish_stop",
@@ -225,21 +225,21 @@ LanguageAnalyzerImp = {
     }
 }
 
-LanguageFiltersImp = {
+LANGUAGE_FILTERS_IMP = {
     ENGLISH: {
         "english_stop": {
-            "type":      "stop",
+            "type": "stop",
             "stopwords": "_english_"
         },
         "english_stemmer": {
-            "type":     "stemmer",
+            "type": "stemmer",
             "language": "english"
         },
         "english_possessive_stemmer": {
-            "type":     "stemmer",
+            "type": "stemmer",
             "language": "possessive_english"
         },
-        "synonym_graph": SynonymGraphFilterImp
+        "synonym_graph": SYNONYM_GRAPH_FILTER_IMP
     },
     HEBREW: {
         "he_IL": {
@@ -247,34 +247,34 @@ LanguageFiltersImp = {
             "locale": "he_IL",
             "dedup": True,
         },
-        "synonym_graph": SynonymGraphFilterImp
+        "synonym_graph": SYNONYM_GRAPH_FILTER_IMP
     },
     RUSSIAN: {
         "russian_stop": {
-            "type":       "stop",
-            "stopwords":  "_russian_"
+            "type": "stop",
+            "stopwords": "_russian_"
         },
         "russian_stemmer": {
-            "type":       "stemmer",
-            "language":   "russian"
+            "type": "stemmer",
+            "language": "russian"
         },
-        "synonym_graph": SynonymGraphFilterImp
+        "synonym_graph": SYNONYM_GRAPH_FILTER_IMP
     },
     SPANISH: {
         "spanish_stop": {
-            "type":       "stop",
-            "stopwords":  "_spanish_"
+            "type": "stop",
+            "stopwords": "_spanish_"
         },
         "spanish_stemmer": {
-            "type":       "stemmer",
-            "language":   "light_spanish"
+            "type": "stemmer",
+            "language": "light_spanish"
         },
-        "synonym_graph": SynonymGraphFilterImp
+        "synonym_graph": SYNONYM_GRAPH_FILTER_IMP
     },
 }
 
 # Phonetic analyzer
-BEIDER_MORSE_LANGUAGESET = {
+BEIDER_MORSE_LANGUAGE_SET = {
     CYRILLIC: 'cyrillic',
     ENGLISH: 'english',
     FRENCH: 'french',
@@ -288,29 +288,29 @@ BEIDER_MORSE_LANGUAGESET = {
 }
 
 
-def BeiderMorseLanguageset(lang):
-    if lang in BEIDER_MORSE_LANGUAGESET:
-        return BEIDER_MORSE_LANGUAGESET[lang]
+def beider_morse_language_set(lang):
+    if lang in BEIDER_MORSE_LANGUAGE_SET:
+        return BEIDER_MORSE_LANGUAGE_SET[lang]
     elif lang in LANG_GROUPS[CYRILLIC]:
-        return BEIDER_MORSE_LANGUAGESET[CYRILLIC]
+        return BEIDER_MORSE_LANGUAGE_SET[CYRILLIC]
     else:
         return None
 
 
-def IsCyrillic(lang, something):
+def is_cyrillic(lang, something):
     return something if lang in LANG_GROUPS[CYRILLIC] else None
 
 
-def GetAnalyzerImp(lang):
-    if lang in LanguageAnalyzerImp:
-        return LanguageAnalyzerImp[lang]
+def get_analyzer_imp(lang):
+    if lang in LANGUAGE_ANALYZER_IMP:
+        return LANGUAGE_ANALYZER_IMP[lang]
     else:
         return None
 
 
-def GetFiltersImp(lang):
-    if lang in LanguageFiltersImp:
-        return LanguageFiltersImp[lang]
+def get_filters_imp(lang):
+    if lang in LANGUAGE_FILTERS_IMP:
+        return LANGUAGE_FILTERS_IMP[lang]
     else:
         return None
 
@@ -320,7 +320,7 @@ SETTINGS = {
         "number_of_shards": 1,
         "number_of_replicas": 0,
         "analysis": {
-            "analyzer": lambda lang: GetAnalyzerImp(lang),
+            "analyzer": get_analyzer_imp,
             # "analyzer": {
             #      Tested, but didnt bring quality enough results:
             #     "phonetic_analyzer": {
@@ -329,7 +329,7 @@ SETTINGS = {
             #       "filter": [
             #         "standard",
             #         "lowercase",
-            #         lambda lang: IsCyrillic(lang, 'icu_transliterate'),
+            #         lambda lang: is_cyrillic(lang, 'icu_transliterate'),
             #         "custom_phonetic",
             #       ],
             #     },
@@ -362,9 +362,9 @@ SETTINGS = {
                     ],
                 },
             },
-            "filter": lambda lang: GetFiltersImp(lang),
+            "filter": get_filters_imp,
             # "filter": {
-            #     "icu_transliterate": lambda lang: IsCyrillic(lang, {
+            #     "icu_transliterate": lambda lang: is_cyrillic(lang, {
             #       "type": "icu_transform",
             #       "id": "Any-Latin; NFD; [:Nonspacing Mark:] Remove; NFC",
             #     }),
@@ -372,13 +372,12 @@ SETTINGS = {
             #       "type": "phonetic",
             #       "encoder": "beider_morse",
             #       "replace": True,
-            #       "languageset": BeiderMorseLanguageset,
+            #       "languageset": beider_morse_language_set,
             #     },
             # },
         },
     },
 }
-
 
 RESULTS_TEMPLATE = {
     # "settings": {
@@ -427,7 +426,7 @@ RESULTS_TEMPLATE = {
                     "fields": {
                         "language": {
                             "type": "text",
-                            "analyzer": lambda lang: LanguageAnalyzer[lang],
+                            "analyzer": lambda x: LANGUAGE_ANALYZER[x],
                         }
                     }
                 },
@@ -437,7 +436,7 @@ RESULTS_TEMPLATE = {
                     "fields": {
                         "language": {
                             "type": "text",
-                            "analyzer": lambda lang: LanguageAnalyzer[lang],
+                            "analyzer": lambda x: LANGUAGE_ANALYZER[x],
                         }
                     }
                 },
@@ -447,7 +446,7 @@ RESULTS_TEMPLATE = {
                     "fields": {
                         "language": {
                             "type": "text",
-                            "analyzer": lambda lang: LanguageAnalyzer[lang],
+                            "analyzer": lambda x: LANGUAGE_ANALYZER[x],
                         },
                     },
                 },
@@ -457,7 +456,7 @@ RESULTS_TEMPLATE = {
                     "fields": {
                         "language": {
                             "type": "text",
-                            "analyzer": lambda lang: LanguageAnalyzer[lang],
+                            "analyzer": lambda x: LANGUAGE_ANALYZER[x],
                         },
                     },
                 },
@@ -476,13 +475,13 @@ RESULTS_TEMPLATE = {
                     "fields": {
                         "language": {
                             "type": "completion",
-                            "analyzer": lambda lang: LanguageAnalyzer[lang],
+                            "analyzer": lambda x: LANGUAGE_ANALYZER[x],
                             "contexts": [
-                              {
-                                  "name": "result_type",
-                                  "type": "category",
-                                  "path": "result_type",
-                              },
+                                {
+                                    "name": "result_type",
+                                    "type": "category",
+                                    "path": "result_type",
+                                },
                             ],
                         }
                     }
@@ -497,7 +496,6 @@ RESULTS_TEMPLATE = {
         }
     }
 }
-
 
 SEARCH_LOGS_TEMPLATE = {
     "mappings": {
@@ -617,16 +615,16 @@ GRAMMARS_TEMPLATE = {
         "grammars": {
             "dynamic": "strict",
             "properties": {
-              # Percolator query for matching rules with $Text variable
-              "query": {
-                "type": "percolator"
-              },
-              # Text query from user. Assigned only in query time. Must be defined in index for percolator functionality.
-               "search_text": {
-                "type": "text",
-                "analyzer": lambda lang: LanguageAnalyzerWithoutSynonyms[lang]
-              },
-              "grammar_rule": {
+                # Percolator query for matching rules with $Text variable
+                "query": {
+                    "type": "percolator"
+                },
+                # Text query from user. Assigned only in query time. Must be defined in index for percolator functionality.
+                "search_text": {
+                    "type": "text",
+                    "analyzer": lambda x: LANGUAGE_ANALYZER_WITHOUT_SYNONYMS[x]
+                },
+                "grammar_rule": {
                     "dynamic": "strict",
                     "properties": {
                         # Hit type, e.g., "landing-page" or other grammars later on..
@@ -653,7 +651,7 @@ GRAMMARS_TEMPLATE = {
                             "fields": {
                                 "language": {
                                     "type": "text",
-                                    "analyzer": lambda lang: LanguageAnalyzer[lang],
+                                    "analyzer": lambda x: LANGUAGE_ANALYZER[x],
                                 }
                             }
                         },
@@ -664,7 +662,7 @@ GRAMMARS_TEMPLATE = {
                             "fields": {
                                 "language": {
                                     "type": "completion",
-                                    "analyzer": lambda lang: LanguageAnalyzer[lang],
+                                    "analyzer": lambda x: LANGUAGE_ANALYZER[x],
                                 }
                             }
                         },
@@ -676,23 +674,26 @@ GRAMMARS_TEMPLATE = {
 }
 
 
-def Resolve(lang, value):
+def resolve(lang, value):
     if isinstance(value, dict):
-        l = [(k, Resolve(lang, v)) for (k, v) in value.iteritems()]
-        return dict([(k, v) for k, v in l if v is not None])
+        vals = [(k, resolve(lang, v)) for (k, v) in value.iteritems()]
+        return dict([(k, v) for k, v in vals if v is not None])
     elif isinstance(value, list):
-        return [x for x in [Resolve(lang, v) for v in value] if x is not None]
+        return [x for x in [resolve(lang, v) for v in value] if x is not None]
     elif callable(value):
         return value(lang)
     else:
         return value
 
 
-for lang in LANG_GROUPS[ALL]:
-    with open(os.path.join('.', 'data', 'es', 'mappings', 'results', 'results-%s.json' % lang), 'w') as f:
-        json.dump(Resolve(lang, RESULTS_TEMPLATE), f, indent=4)
-    with open(os.path.join('.', 'data', 'es', 'mappings', 'grammars', 'grammars-%s.json' % lang), 'w') as f:
-        json.dump(Resolve(lang, GRAMMARS_TEMPLATE), f, indent=4)
-# Without languages
-with open(os.path.join('.', 'data', 'es', 'mappings', 'search_logs.json'), 'w') as f:
-    json.dump(Resolve('xx', SEARCH_LOGS_TEMPLATE), f, indent=4)
+if __name__ == "__main__":
+    for language in LANG_GROUPS[ALL]:
+        with open(os.path.join('..', '..', 'data', 'es', 'mappings', 'results', 'results-%s.json' % language),
+                  'w') as f:
+            json.dump(resolve(language, RESULTS_TEMPLATE), f, indent=4)
+        with open(os.path.join('..', '..', 'data', 'es', 'mappings', 'grammars', 'grammars-%s.json' % language),
+                  'w') as f:
+            json.dump(resolve(language, GRAMMARS_TEMPLATE), f, indent=4)
+    # Without languages
+    with open(os.path.join('..', '..', 'data', 'es', 'mappings', 'search_logs.json'), 'w') as f:
+        json.dump(resolve('xx', SEARCH_LOGS_TEMPLATE), f, indent=4)
