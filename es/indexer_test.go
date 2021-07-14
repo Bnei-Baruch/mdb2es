@@ -528,9 +528,13 @@ func updateContentUnit(cu ContentUnit, lang string, published bool, secure bool)
 		}
 		mdbContentUnit = *cup
 	} else {
+		ct := consts.CT_LESSON_PART
+		if cu.ContentType != "" {
+			ct = cu.ContentType
+		}
 		mdbContentUnit = mdbmodels.ContentUnit{
 			UID:    utils.GenerateUID(8),
-			TypeID: mdb.CONTENT_TYPE_REGISTRY.ByName[consts.CT_LESSON_PART].ID,
+			TypeID: mdb.CONTENT_TYPE_REGISTRY.ByName[ct].ID,
 		}
 		if err := mdbContentUnit.Insert(common.DB); err != nil {
 			return "", err

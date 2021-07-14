@@ -56,6 +56,8 @@ func MakeIndexer(namespace string, date string, names []string, mdb *sql.DB, esc
 			indexer.indices[i] = MakeBlogIndex(namespace, date, mdb, esc)
 		} else if name == consts.ES_RESULT_TYPE_TWEETS {
 			indexer.indices[i] = MakeTweeterIndex(namespace, date, mdb, esc)
+		} else if name == consts.ES_RESULT_TYPE_LIKUTIM {
+			indexer.indices[i] = MakeLikutimIndex(namespace, date, mdb, esc)
 		} else {
 			return nil, errors.New(fmt.Sprintf("MakeIndexer - Invalid index name: %+v", name))
 		}

@@ -395,6 +395,7 @@ const ES_RESULT_TYPE_COLLECTIONS = "collections"
 const ES_RESULT_TYPE_TAGS = "tags"
 const ES_RESULT_TYPE_BLOG_POSTS = "posts"
 const ES_RESULT_TYPE_TWEETS = "tweets"
+const ES_RESULT_TYPE_LIKUTIM = "likutim"
 
 // Result of many tweets in one hit
 const SEARCH_RESULT_TWEETS_MANY = "tweets_many"
@@ -407,6 +408,7 @@ const ES_UID_TYPE_COLLECTION = "collection"
 const ES_UID_TYPE_SOURCE = "source"
 const ES_UID_TYPE_TWEET = "tweet"
 const ES_UID_TYPE_BLOG_POST = "blog_post"
+const ES_UID_TYPE_LIKUTIM = "likutim"
 
 //  ES_RESULT_TYPE_TWEETS is not part of the array since it's searched in parallel to other results search
 var ES_SEARCH_RESULT_TYPES = []string{
@@ -414,6 +416,7 @@ var ES_SEARCH_RESULT_TYPES = []string{
 	ES_RESULT_TYPE_SOURCES,
 	ES_RESULT_TYPE_COLLECTIONS,
 	ES_RESULT_TYPE_BLOG_POSTS,
+	ES_RESULT_TYPE_LIKUTIM,
 }
 
 var ES_ALL_RESULT_TYPES = []string{

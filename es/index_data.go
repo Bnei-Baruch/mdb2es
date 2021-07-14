@@ -28,6 +28,16 @@ func MakeIndexData(db *sql.DB, sqlScope string) (*IndexData, error) {
 	return indexData, err
 }
 
+func MakeIndexDataLikutim(db *sql.DB, sqlScope string) (*IndexData, error) {
+	indexData := &IndexData{DB: db}
+	var err error
+	indexData.Tags, err = indexData.loadTags(sqlScope)
+	if err != nil {
+		return indexData, err
+	}
+	return indexData, nil
+}
+
 func (indexData *IndexData) load(sqlScope string) error {
 	var err error
 
