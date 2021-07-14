@@ -56,6 +56,7 @@ type Collection struct {
 
 type ContentUnit struct {
 	MDB_UID                 string      `json:"mdb_uid"`
+	UIDForCreate            string      `json:"uid_for_create"`
 	TypedUIDs               []string    `json:"typed_uids"`
 	Name                    string      `json:"name,omitempty"`
 	Description             string      `json:"description,omitempty"`
@@ -449,6 +450,9 @@ func addContentUnitFile(cu ContentUnit, lang string, file mdbmodels.File) (strin
 		mdbContentUnit = mdbmodels.ContentUnit{
 			UID:    utils.GenerateUID(8),
 			TypeID: mdb.CONTENT_TYPE_REGISTRY.ByName[consts.CT_LESSON_PART].ID,
+		}
+		if cu.UIDForCreate != "" {
+			mdbContentUnit.UID = cu.UIDForCreate
 		}
 		if err := mdbContentUnit.Insert(common.DB); err != nil {
 			return "", err

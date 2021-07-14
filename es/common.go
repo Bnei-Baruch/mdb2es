@@ -68,6 +68,9 @@ func InitConfigFolder(configKey string, value *string) (string, error) {
 func IsWindows() bool {
 	return runtime.GOOS == "windows"
 }
+func SetUnzipUrl(name string) {
+	unzipUrl = viper.GetString(name)
+}
 
 func InitVars() {
 	if IsWindows() {
@@ -75,10 +78,6 @@ func InitVars() {
 		if pythonPath == "" {
 			panic("python path should be set in config.")
 		}
-	}
-	parseDocsBin = viper.GetString("elasticsearch.parse-docs-bin")
-	if parseDocsBin == "" {
-		panic("parse_docs.py binary should be set in config.")
 	}
 	unzipUrl = viper.GetString("elasticsearch.unzip-url")
 	if unzipUrl == "" {

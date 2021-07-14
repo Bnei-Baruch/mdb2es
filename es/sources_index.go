@@ -3,11 +3,7 @@ package es
 import (
 	"context"
 	"database/sql"
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
-	"os"
-	"path"
 	"strconv"
 	"strings"
 	"sync/atomic"
@@ -38,7 +34,13 @@ func MakeSourcesIndex(namespace string, indexDate string, db *sql.DB, esc *elast
 
 type SourcesIndex struct {
 	BaseIndex
-	Progress uint64
+	Progress    uint64
+	filesByCuId map[string][]*FileData
+}
+
+type FileData struct {
+	cuUid string
+	mdbmodels.File
 }
 
 func (index *SourcesIndex) ReindexAll() error {
@@ -280,29 +282,30 @@ func (index *SourcesIndex) loadSources(db *sql.DB, sqlScope string) (map[string]
 	return codeMap, idMap, authorsByLanguageMap, nil
 }
 
-func (index *SourcesIndex) getDocxPath(uid string, lang string) (string, error) {
-	folder, err := SourcesFolder()
+func (index *SourcesIndex) fetchDocx(cuUid string, lang string) (string, error) {
+	files, err := mdbmodels.Files(index.db,
+		qm.InnerJoin("content_units cu ON cu.id = content_unit_id"),
+		qm.Where("cu.uid = ? AND language = ?", cuUid, lang),
+	).All()
 	if err != nil {
 		return "", err
 	}
-	uidPath := path.Join(folder, uid)
-	jsonPath := path.Join(uidPath, "index.json")
-	jsonCnt, err := ioutil.ReadFile(jsonPath)
-	if err != nil {
-		return "", fmt.Errorf("SourcesIndex.getDocxPath - Unable to read from file %s. Error: %+v", jsonPath, err)
-	}
-	var m map[string]map[string]string
-	err = json.Unmarshal(jsonCnt, &m)
-	if err != nil {
-		return "", err
-	}
-	if val, ok := m[lang]; ok {
-		docxPath := path.Join(uidPath, val["docx"])
-		if _, err := os.Stat(docxPath); err == nil {
-			return path.Join(docxPath), nil
+
+	var file *mdbmodels.File
+	for _, f := range files {
+		ex := strings.Split(f.Name, ".")[1]
+		if ex == "docx" {
+			file = f
+		}
+		if file == nil && ex == "doc" {
+			file = f
 		}
 	}
-	return "", errors.New("SourcesIndex.getDocxPath - Docx not found in index.json.")
+	if file == nil {
+		return "", errors.New(fmt.Sprintf("No .docx or .doc for unit: %s", cuUid))
+	}
+
+	return DocText(file.UID)
 }
 
 func (index *SourcesIndex) indexSource(mdbSource *mdbmodels.Source, parents []string, parentIds []int64, authorsByLanguage map[string][]string) *IndexErrors {
@@ -321,16 +324,12 @@ func (index *SourcesIndex) indexSource(mdbSource *mdbmodels.Source, parents []st
 				FilterValues: KeyValues(consts.ES_UID_TYPE_SOURCE, parents),
 				TypedUids:    []string{KeyValue(consts.ES_UID_TYPE_SOURCE, mdbSource.UID)},
 			}
-			fPath, missingSourceFileErr := index.getDocxPath(mdbSource.UID, i18n.Language)
-			// Ignore err here as if missing source for a language in very common and is ok.
-			if missingSourceFileErr == nil {
-				// Found docx.
-				content, parseErr := ParseDocx(fPath)
-				indexErrors.DocumentError(i18n.Language, parseErr, fmt.Sprintf("SourcesIndex.indexSource - Error parsing docx for source %s and language %s.  Skipping indexing.", mdbSource.UID, i18n.Language))
-				if parseErr == nil {
-					source.Content = content
-					allLanguages = append(allLanguages, i18n.Language)
-				}
+
+			if content, err := index.fetchDocx(mdbSource.UID, i18n.Language); err == nil {
+				source.Content = content
+				allLanguages = append(allLanguages, i18n.Language)
+			} else {
+				indexErrors.DocumentError(i18n.Language, err, fmt.Sprintf("SourcesIndex.indexSource - Error parsing docx for source %s and language %s.  Skipping indexing.", mdbSource.UID, i18n.Language))
 			}
 			// Find parents...
 			findParentsErr := (error)(nil)

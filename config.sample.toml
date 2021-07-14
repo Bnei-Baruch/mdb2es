@@ -16,6 +16,7 @@ test-source-content-docx="$GOPATH/src/github.com/Bnei-Baruch/archive-backend/es/
 test-sources-folder="/tmp/test-sources-folder"
 mdb-url="postgres://localhost/mdb?sslmode=disable&user=postgres"
 url-template="postgres://localhost/%s?sslmode=disable&user=postgres"
+unzip-url = "https://kabbalahmedia.info/assets/api"
 #for windows:
 #test-source-content-docx="C://Users//[USERNAME]//go//src//github.com//Bnei-Baruch//archive-backend//es//TEST-CONTENT.docx"
 #test-sources-folder="C://test-sources-folder"

@@ -24,6 +24,8 @@ func TestSourcesIndexer(t *testing.T) {
 }
 
 func (suite *SourcesIndexerSuite) TestSourcesIndex() {
+
+	es.SetUnzipUrl("test.unzip-url")
 	fmt.Printf("\n\n\n--- TEST SOURCES INDEX ---\n\n\n")
 
 	r := require.New(suite.T())
@@ -38,6 +40,15 @@ func (suite *SourcesIndexerSuite) TestSourcesIndex() {
 
 	fmt.Printf("\n\n\nAdding source.\n\n")
 	source1UID, source1ID := suite.us(Source{Name: "test-name-1"}, consts.LANG_ENGLISH)
+	fileHe := mdbmodels.File{ID: 1, Name: "heb_o_rav_bs-shamati-038-irat-ashem_2016-09-16_lesson.doc", UID: "8awHBfjU", Language: null.String{consts.LANG_HEBREW, true}, Secure: 0, Published: true}
+	fileEn := mdbmodels.File{ID: 2, Name: "eng_t_rav_2017-06-09_kitei-makor_mi-ichud-le-hafatza_n1_p1.docx", UID: "frnHYhIw", Language: null.String{consts.LANG_ENGLISH, true}, Secure: 0, Published: true}
+	fContentHe, err := es.DocText(fileHe.UID)
+	r.Nil(err)
+	fContentEn, err := es.DocText(fileEn.UID)
+	r.Nil(err)
+	suite.ucuf(ContentUnit{Name: "test-name-1", ContentType: consts.CT_SOURCE, UIDForCreate: source1UID}, consts.LANG_HEBREW, fileHe, true)
+	suite.ucuf(ContentUnit{MDB_UID: source1UID}, consts.LANG_ENGLISH, fileEn, true)
+
 	suite.us(Source{MDB_UID: source1UID, Name: "שם-בדיקה-1"}, consts.LANG_HEBREW)
 	suite.asa(Source{MDB_UID: source1UID}, consts.LANG_ENGLISH, mdbmodels.Author{Name: "Test Name", ID: 3, Code: "t1"}, true, true)
 	suite.asa(Source{MDB_UID: source1UID}, consts.LANG_HEBREW, mdbmodels.Author{Name: "שם לבדיקה", ID: 4, Code: "t2"}, true, true)
@@ -62,10 +73,10 @@ func (suite *SourcesIndexerSuite) TestSourcesIndex() {
 
 	fmt.Println("Validate source files.")
 	suite.validateSourceFile(indexNameEn, indexer, map[string]string{
-		source1UID: "TEST CONTENT",
+		source1UID: fContentEn,
 	})
 	suite.validateSourceFile(indexNameHe, indexer, map[string]string{
-		source1UID: "TEST CONTENT",
+		source1UID: fContentHe,
 	})
 
 	fmt.Println("Validate source full path.")
@@ -88,13 +99,19 @@ func (suite *SourcesIndexerSuite) TestSourcesIndex() {
 	fmt.Println("Validate adding source with file and author and and validate.")
 	suite.asa(Source{MDB_UID: source2UID}, consts.LANG_ENGLISH, mdbmodels.Author{Name: "Test Name 2", ID: 5, Code: "t3"}, true, true)
 	suite.asa(Source{MDB_UID: source2UID}, consts.LANG_HEBREW, mdbmodels.Author{Name: "שם נוסף לבדיקה", ID: 6, Code: "t4"}, true, true)
+	fileHe2 := mdbmodels.File{ID: 3, Name: "heb_o_rav_achana_2014-05-28_lesson.doc", UID: "bBBIDCiy", Language: null.String{consts.LANG_HEBREW, true}, Secure: 0, Published: true}
+	fileEn2 := mdbmodels.File{ID: 4, Name: "eng_o_rav_2020-12-24_art_on-jewish-unity-no-6.docx", UID: "QrtIVYJA", Language: null.String{consts.LANG_ENGLISH, true}, Secure: 0, Published: true}
+	suite.ucuf(ContentUnit{Name: "test-name-2", ContentType: consts.CT_SOURCE, UIDForCreate: source2UID}, consts.LANG_HEBREW, fileHe2, true)
+	suite.ucuf(ContentUnit{MDB_UID: source2UID}, consts.LANG_ENGLISH, fileEn2, true)
 	r.Nil(indexer.SourceUpdate(source2UID))
 	suite.validateNames(indexNameEn, indexer, []string{"test-name-1", "test-name-2"})
 	suite.validateFullNames(indexNameEn, indexer, []string{"Test Name > test-name-1", "Test Name 2 > test-name-2"})
 
+	fContentEn2, err := es.DocText(fileEn2.UID)
+	r.Nil(err)
 	suite.validateSourceFile(indexNameEn, indexer, map[string]string{
-		source1UID: "TEST CONTENT",
-		source2UID: "TEST CONTENT",
+		source1UID: fContentEn,
+		source2UID: fContentEn2,
 	})
 	suite.validateSourcesFullPath(indexNameEn, indexer, [][]string{[]string{source1UID, "t1", "t2"}, []string{source2UID, "t3", "t4"}})
 
@@ -104,6 +121,10 @@ func (suite *SourcesIndexerSuite) TestSourcesIndex() {
 	consts.ES_SRC_PARENTS_FOR_CHAPTER_POSITION_INDEX[parentShamatiUID] = consts.LETTER_IF_HEBREW
 	suite.usfc(parentShamatiUID, consts.LANG_ENGLISH)
 	suite.asa(Source{MDB_UID: parentShamatiUID}, consts.LANG_ENGLISH, mdbmodels.Author{Name: "Test Name 2", ID: 7, Code: "t5"}, true, true)
+	fileHeShamati := mdbmodels.File{ID: 5, Name: "heb_o_rav_bs-shamati-020-inyan-lishma_2015-07-10_lesson.doc", UID: "72QvKVD8", Language: null.String{consts.LANG_HEBREW, true}, Secure: 0, Published: true}
+	fileEnShamati := mdbmodels.File{ID: 6, Name: "eng_t_rav_2010-07-19_program_morim-dereh_anaka-vekesher-rishoni.doc", UID: "yww1AnQ9", Language: null.String{consts.LANG_ENGLISH, true}, Secure: 0, Published: true}
+	suite.ucuf(ContentUnit{Name: "test-name-shamati", ContentType: consts.CT_SOURCE, UIDForCreate: parentShamatiUID}, consts.LANG_HEBREW, fileHeShamati, true)
+	suite.ucuf(ContentUnit{MDB_UID: parentShamatiUID}, consts.LANG_ENGLISH, fileEnShamati, true)
 	r.Nil(indexer.SourceUpdate(parentShamatiUID))
 	suite.validateNames(indexNameEn, indexer, []string{"test-name-1", "test-name-2", "Shamati"})
 	suite.validateFullNames(indexNameEn, indexer, []string{"Test Name > test-name-1", "Test Name 2 > test-name-2", "Test Name 2 > Shamati"})
@@ -115,8 +136,13 @@ func (suite *SourcesIndexerSuite) TestSourcesIndex() {
 	suite.us(Source{Name: "שם-בדיקה-3", MDB_UID: chapterPositionUID,
 		ParentID: null.Int64From(parentShamatiID),
 		Position: null.IntFrom(1)}, consts.LANG_HEBREW)
+	fileHeChapter := mdbmodels.File{ID: 7, Name: "heb_o_rav_zohar-la-am-ktaim-nivharim_2016-02-17_lesson.doc", UID: "pO6QWIAZ", Language: null.String{consts.LANG_HEBREW, true}, Secure: 0, Published: true}
+	fileEnChapter := mdbmodels.File{ID: 8, Name: "eng_t_rav_2020-10-15_lesson_mr-tora-bereshit_n1_p1.docx", UID: "Q7XSgAZy", Language: null.String{consts.LANG_ENGLISH, true}, Secure: 0, Published: true}
+	suite.ucuf(ContentUnit{Name: "test-name-chapterPosition", ContentType: consts.CT_SOURCE, UIDForCreate: chapterPositionUID}, consts.LANG_HEBREW, fileHeChapter, true)
+	suite.ucuf(ContentUnit{MDB_UID: chapterPositionUID}, consts.LANG_ENGLISH, fileEnChapter, true)
 	suite.usfc(chapterPositionUID, consts.LANG_ENGLISH)
 	suite.usfc(chapterPositionUID, consts.LANG_HEBREW)
+
 	r.Nil(indexer.SourceUpdate(chapterPositionUID))
 	r.Nil(indexer.RefreshAll())
 
